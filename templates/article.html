@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Полезные статьи
+{% endblock %}
+
+{% block main %}
+{% for i in object_list %}
+    <div>
+        {{ i.title_article }}
+        <img src="{{ i.img_title.url }}" alt="non">
+        <a type="button" href="{% url 'article_detail' i.slug %}">переход блин</a>
+        {{ i.url }}
+    </div>
+
+{% endfor %}
+
+{% endblock %}

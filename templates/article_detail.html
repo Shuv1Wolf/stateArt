@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+{{ object.title }}
+{% endblock %}
+
+{% block main %}
+    <div>
+        {{ object.title }}
+        <img src="{{ object.img_article.url }}" alt="">
+        {{ object.description }}
+        {{ object.canonical }}
+    </div>
+{% endblock %}
