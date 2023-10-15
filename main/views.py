@@ -1,28 +1,67 @@
 from django.views.generic import ListView, DetailView
-from django.shortcuts import render
+from django.shortcuts import HttpResponseRedirect
+from django.views.generic.edit import FormMixin
 from main.models import Article, News, Reviews
+from .forms import Form
 
 # Create your views here.
 
-class HomePageView(ListView):
+class HomePageView(FormMixin, ListView):
+    form_class = Form
     model = News
     template_name = "html/index.html"
     context_object_name = "news"
 
-class ArticleView(ListView):
+    def post(self, request, *args, **kwargs):
+        form = Form(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(request.path, {'form': form})
+        else:
+            return HttpResponseRedirect(request.path, {'form': form})
+
+
+class ArticleView(FormMixin, ListView):
+    form_class = Form
     model = Article
     template_name = "html/article.html"
 
-class ArticleDetailView(DetailView):
+    def post(self, request, *args, **kwargs):
+        form = Form(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(request.path, {'form': form})
+        else:
+            return HttpResponseRedirect(request.path, {'form': form})
+
+
+class ArticleDetailView(FormMixin, DetailView):
+    form_class = Form
     model = Article
     template_name = "html/article_detail.html"
     context_object_name = 'object'
 
-class ReviewsView(ListView):
+    def post(self, request, *args, **kwargs):
+        form = Form(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(request.path, {'form': form})
+        else:
+            return HttpResponseRedirect(request.path, {'form': form})
+
+class ReviewsView(FormMixin, ListView):
+    form_class = Form
     model = Reviews
     template_name = "html/reviews.html"
     context_object_name = "reviews"
 
+    def post(self, request, *args, **kwargs):
+        form = Form(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(request.path, {'form': form})
+        else:
+            return HttpResponseRedirect(request.path, {'form': form})
 
 
 

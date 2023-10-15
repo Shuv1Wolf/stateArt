@@ -47,7 +47,7 @@
             <div class="main-header-column last">
                 <p class="main-text align-right">Новая Москва, Троицк, <br>
                     Фабричная площадь, д.1</p>
-                <a href="#" class="button callback-button">
+                <a href="#" class="button callback-button" >
                     Обратный звонок
                 </a>
             </div>
@@ -193,6 +193,15 @@
                     </nav>
                 </div>
             </div>
+
+
+            <form method="post">
+                {% csrf_token %}
+                {{ form }}
+                <input type="submit" value="Submit">
+                </form>
+
+
             {% block main %}
 
             {% endblock %}
