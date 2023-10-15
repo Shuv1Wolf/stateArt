@@ -6,21 +6,21 @@ from main.models import Article, News, Reviews
 
 class HomePageView(ListView):
     model = News
-    template_name = "index.html"
+    template_name = "html/index.html"
     context_object_name = "news"
 
 class ArticleView(ListView):
     model = Article
-    template_name = "article.html"
+    template_name = "html/article.html"
 
 class ArticleDetailView(DetailView):
     model = Article
-    template_name = "article_detail.html"
+    template_name = "html/article_detail.html"
     context_object_name = 'object'
 
 class ReviewsView(ListView):
     model = Reviews
-    template_name = "reviews.html"
+    template_name = "html/reviews.html"
     context_object_name = "reviews"
 
 
