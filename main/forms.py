@@ -1,5 +1,7 @@
 from django import forms
 from main.models import Article, News, Form
+from captcha.fields import ReCaptchaField
+from captcha.widgets import ReCaptchaV3, ReCaptchaV2Checkbox
 
 # class CreateArticleForm(forms.ModelForm):
 #     img_title = forms.ImageField(required=False)
@@ -32,7 +34,9 @@ from main.models import Article, News, Form
 
 
 class Form(forms.ModelForm):
+     captcha = ReCaptchaField(widget=ReCaptchaV3)
+
      class Meta:
           model = Form
-          fields = ['phone_number', 'time', 'name']
+          fields = ['phone_number', 'time', 'name', 'captcha']
 
