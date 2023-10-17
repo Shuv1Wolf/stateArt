@@ -22,7 +22,9 @@ class Article(models.Model):
 
     title_h1 = models.CharField(max_length=250, verbose_name="Заголовок (h1) на странице статьи")
     img_article = models.ImageField(upload_to="static/upload_img/", verbose_name="img в статье")
-    description = models.TextField(verbose_name="Описание статьи")
+    description_1 = models.TextField(verbose_name="Описание статьи (блок 1)")
+    description_2 = models.TextField(verbose_name="Описание статьи (блок 2 напротив img) ")
+    description_3 = models.TextField(verbose_name="Описание статьи (блок 3 под img) ")
     canonical = models.TextField(verbose_name="canonical")  #для чего?
 
     def __str__(self):

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{% static 'content/Favicon.png' %}" type="png">
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'C:\Users\mskur\Desktop\stateArt\static\css\main.css' %}">
     <title>{% block title %}{% endblock %}</title>
     <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900"
         rel="stylesheet" />
@@ -47,13 +47,13 @@
             <div class="main-header-column last">
                 <p class="main-text align-right">Новая Москва, Троицк, <br>
                     Фабричная площадь, д.1</p>
-                <a href="#" class="button callback-button" >
+                <a href="#" class="button callback-button">
                     Обратный звонок
                 </a>
             </div>
         </header>
         <nav class="header-navbar">
-            <li class="navlink"><a href="{% url 'homepage' %}">Главная</a></li>
+            <li class="navlink"><a href="#">Главная</a></li>
             <li class="navlink"><a href="#">Доставка и оплата</a></li>
             <li class="navlink"><a href="#">Как заказать</a></li>
             <li class="navlink"><a href="{% url 'poleznye-stati' %}">Статьи</a></li>
@@ -63,7 +63,7 @@
         <div class="header-navbar_mobile">
             <img class="header_navbar_button" src="{% static 'content/Burger.svg' %}"></img>
             <nav class="header-navbar_hiden header-navbar_hiden_hide">
-                <li class="navlink"><a href="{% url 'homepage' %}">Главная</a></li>
+                <li class="navlink"><a href="#">Главная</a></li>
                 <li class="navlink"><a href="#">Доставка и оплата</a></li>
                 <li class="navlink"><a href="#">Как заказать</a></li>
                 <li class="navlink"><a href="{% url 'poleznye-stati' %}">Статьи</a></li>
@@ -167,27 +167,27 @@
                     <h2 class="h2-title align-center">Почему нам доверяют</h2>
                     <nav class="reasons-list">
                         <li class="reason-li">
-                            <img src="./content/win.svg" alt="" class="reason-img">
+                            <img src="{% static 'content/win.svg' %}" alt="" class="reason-img">
                             <p class="main-text strong">Более 20 лет на рынке услуг</p>
                         </li>
                         <li class="reason-li">
-                            <img src="./content/bricks.svg" alt="" class="reason-img">
+                            <img src="{% static 'content/bricks.svg' %}" alt="" class="reason-img">
                             <p class="main-text strong">Более 1000 реализованых объектов</p>
                         </li>
                         <li class="reason-li">
-                            <img src="./content/people.svg" alt="" class="reason-img">
+                            <img src="{% static 'content/people.svg' %}" alt="" class="reason-img">
                             <p class="main-text strong">Коллектив с высокой квалификацией</p>
                         </li>
                         <li class="reason-li">
-                            <img src="./content/clock.svg" alt="" class="reason-img">
+                            <img src="{% static 'content/clock.svg' %}" alt="" class="reason-img">
                             <p class="main-text strong">Надежные сроки и высокое качество</p>
                         </li>
                         <li class="reason-li">
-                            <img src="./content/tech.svg" alt="" class="reason-img">
+                            <img src="{% static 'content/tech.svg' %}" alt="" class="reason-img">
                             <p class="main-text strong">Собственные производственные мощности</p>
                         </li>
                         <li class="reason-li">
-                            <img src="./content/sheild.svg" alt="" class="reason-img">
+                            <img src="{% static 'content/sheild.svg' %}" alt="" class="reason-img">
                             <p class="main-text strong">Гарантия до 10 лет</p>
                         </li>
                     </nav>
@@ -195,11 +195,11 @@
             </div>
 
 
-            <form method="post">
-                {% csrf_token %}
-                {{ form }}
-                <input type="submit" value="Submit">
-            </form>
+<!--            <form method="post">-->
+<!--                {% csrf_token %}-->
+<!--                {{ form }}-->
+<!--                <input type="submit" value="Submit">-->
+<!--            </form>-->
 
 
             {% block main %}
@@ -257,10 +257,10 @@
             },
             addEventListener() {
                 document.querySelector('.header_navbar_button').onclick = () => {
-                    if(headerNav.classList.contains('header-navbar_hiden_hide')){
+                    if (headerNav.classList.contains('header-navbar_hiden_hide')) {
                         this.show();
                     }
-                    else{
+                    else {
                         this.hide();
                     }
                 }
@@ -269,4 +269,5 @@
         navbarBtn.addEventListener();
     </script>
 </body>
+
 </html>
