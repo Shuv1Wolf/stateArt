@@ -549,6 +549,7 @@ body {
 }
 
 .callback-banner {
+    max-height: 250px;
     display: flex;
     justify-content: space-between;
     background-color: #E8E8E8;
@@ -610,6 +611,7 @@ body {
 
 @media screen and (max-width: 550px) {
     .callback-banner {
+        max-height: 450px;
         display: flex;
         flex-direction: column;
     }
