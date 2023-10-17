@@ -14,18 +14,19 @@ class News(models.Model):
 
 
 class Article(models.Model):
-    slug = models.SlugField(null=True, blank=True, unique=True, verbose_name="ЧПУ")
+    slug = models.SlugField(verbose_name="ЧПУ")
     title = models.CharField(max_length=200, verbose_name="Блок title в html")
 
     title_article = models.CharField(max_length=250, verbose_name="Заголовок на странице со статьями")
     img_title = models.ImageField(upload_to="static/upload_img/", verbose_name="img на странице со статьями")
 
-    title_h1 = models.CharField(max_length=250, verbose_name="Заголовок (h1) на странице статьи")
+    title_h1_1 = models.CharField(max_length=250, verbose_name="Заголовок (h1) на странице статьи")
     img_article = models.ImageField(upload_to="static/upload_img/", verbose_name="img в статье")
     description_1 = models.TextField(verbose_name="Описание статьи (блок 1)")
-    description_2 = models.TextField(verbose_name="Описание статьи (блок 2 напротив img) ")
-    description_3 = models.TextField(verbose_name="Описание статьи (блок 3 под img) ")
-    canonical = models.TextField(verbose_name="canonical")  #для чего?
+    title_h1_2 = models.CharField(max_length=250, verbose_name="Второй заголовок (h1) на странице статьи для второго блока", blank=True, null=True)
+    description_2 = models.TextField(verbose_name="Описание статьи (блок 2 напротив img)", blank=True, null=True)
+    description_3 = models.TextField(verbose_name="Описание статьи (блок 3 под img) ", blank=True, null=True)
+    canonical = models.TextField(verbose_name="canonical", blank=True, null=True)  #для чего?
 
     def __str__(self):
         return self.title_article
@@ -59,6 +60,9 @@ class Form(models.Model):
     class Meta:
         verbose_name = "Обратная связь"
         verbose_name_plural = "Обратная связь"
+
+
+
 
 
 

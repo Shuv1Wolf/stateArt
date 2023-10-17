@@ -8,21 +8,30 @@
 {% block main %}
     <div class="content-section">
                 <div class="only-text-block">
-                    <h1 class="h1-title with-margin">{{ object.title_h1 }}</h1>
+                    <h1 class="h1-title with-margin">{{ object.title_h1_1 }}</h1>
                     <p class="main-text with-margin strong">Другие Полезные статьи в разделе "Библиотека". <a
                             class="link-text" href="{% url 'poleznye-stati' %}">Перейти</a>
                     </p>
                     <p class="main-text with-margin">{{ object.description_1 }}</p>
                 </div>
                 <div class="only-text-block">
+                    {% if object.title_h1_2 != "" %}
+                        <h2 class="h1-title with-margin">{{ object.title_h1_2 }}</h2>
+                    {% endif %}
                     <div class="text-with-image">
                         <div class="text-with-image-text">
-                            <p class="main-text with-margin">{{ object.description_2 }}</p>
-                            <p class="main-text with-margin">{{ object.canonical }}</p>
+                            {% if object.description_2 != "" %}
+                                <p class="main-text with-margin">{{ object.description_2 }}</p>
+                            {% endif %}
                         </div>
                         <img src="{{ object.img_article.url }}" alt="" class="text-with-image-image with-margin">
                     </div>
-                    <p class="main-text with-margin">{{ object.description_1 }}</p>
+                    {% if object.description_3 != "" %}
+                        <p class="main-text with-margin">{{ object.description_3 }}</p>
+                    {% endif %}
+                    {% if object.canonical != "" %}
+                    <p class="main-text with-margin">{{ object.canonical }}</p>
+                    {% endif %}
                 </div>
                 <div class="callback-banner">
                     <div class="callback-banner-callback-part">
