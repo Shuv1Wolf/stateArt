@@ -38,5 +38,5 @@ class Form(forms.ModelForm):
 
      class Meta:
           model = Form
-          fields = ['phone_number', 'time', 'name', 'captcha']
+          fields = ['phone_number', 'time', 'name', 'captcha', 'url']
 

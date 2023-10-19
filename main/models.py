@@ -49,10 +49,11 @@ class Reviews(models.Model):
 
 
 class Form(models.Model):
-    phone_number = models.CharField(max_length=17, blank=True, verbose_name="Номер телефона")
+    phone_number = models.CharField(max_length=17,verbose_name="Номер телефона")
     time = models.TimeField(verbose_name="Удобное время",
-                            error_messages="Time must be entered in the format: '00:00'")
+                            error_messages="Time must be entered in the format: '00:00'", blank=True)
     name = models.CharField(max_length=250, verbose_name="Имя")
+    url = models.URLField(verbose_name="URL перехода", blank=True)
 
     def __str__(self):
         return self.phone_number

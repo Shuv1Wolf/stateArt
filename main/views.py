@@ -4,7 +4,6 @@ from django.views.generic.edit import FormMixin
 from main.models import Article, News, Reviews
 from .forms import Form
 
-# Create your views here.
 
 class HomePageView(FormMixin, ListView):
     form_class = Form

@@ -53,7 +53,7 @@
             </div>
         </header>
         <nav class="header-navbar">
-            <li class="navlink"><a href="#">Главная</a></li>
+            <li class="navlink"><a href="{% url 'homepage' %}">Главная</a></li>
             <li class="navlink"><a href="#">Доставка и оплата</a></li>
             <li class="navlink"><a href="#">Как заказать</a></li>
             <li class="navlink"><a href="{% url 'poleznye-stati' %}">Статьи</a></li>
@@ -63,7 +63,7 @@
         <div class="header-navbar_mobile">
             <img class="header_navbar_button" src="{% static 'content/Burger.svg' %}"></img>
             <nav class="header-navbar_hiden header-navbar_hiden_hide">
-                <li class="navlink"><a href="#">Главная</a></li>
+                <li class="navlink"><a href="{% url 'homepage' %}">Главная</a></li>
                 <li class="navlink"><a href="#">Доставка и оплата</a></li>
                 <li class="navlink"><a href="#">Как заказать</a></li>
                 <li class="navlink"><a href="{% url 'poleznye-stati' %}">Статьи</a></li>
@@ -195,11 +195,20 @@
             </div>
 
 
-<!--            <form method="post">-->
-<!--                {% csrf_token %}-->
-<!--                {{ form }}-->
-<!--                <input type="submit" value="Submit">-->
-<!--            </form>-->
+            <form method="post">
+
+                {% csrf_token %}
+                {{ form.phone_number }}
+                {{ form.time }}
+                {{ form.name }}
+                {{ form.captcha }}
+                <h3 hidden>{{ form.url }}</h3>
+                <script>
+                    const url = window.location.href;
+                    document.getElementById('id_url').value = url;
+                </script>
+                <input type="submit" value="Submit">
+            </form>
 
 
             {% block main %}
