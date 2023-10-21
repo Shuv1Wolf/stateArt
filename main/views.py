@@ -1,7 +1,7 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from django.shortcuts import HttpResponseRedirect
 from django.views.generic.edit import FormMixin
-from main.models import Article, News, Reviews
+from main.models import Article, News, Reviews, Project
 from .forms import Form
 
 
@@ -63,4 +63,43 @@ class ReviewsView(FormMixin, ListView):
             return HttpResponseRedirect(request.path, {'form': form})
 
 
+class ContactView(FormMixin, TemplateView):
+    template_name = "html/contacts.html"
+    form_class = Form
 
+    def post(self, request, *args, **kwargs):
+        form = Form(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(request.path, {'form': form})
+        else:
+            return HttpResponseRedirect(request.path, {'form': form})
+
+
+class ProjectView(FormMixin, ListView):
+    form_class = Form
+    model = Project
+    template_name = "html/project.html"
+
+    def post(self, request, *args, **kwargs):
+        form = Form(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(request.path, {'form': form})
+        else:
+            return HttpResponseRedirect(request.path, {'form': form})
+
+
+class ProjectDetailView(FormMixin, DetailView):
+    form_class = Form
+    model = Project
+    template_name = "html/project_detail.html"
+    context_object_name = 'object'
+
+    def post(self, request, *args, **kwargs):
+        form = Form(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(request.path, {'form': form})
+        else:
+            return HttpResponseRedirect(request.path, {'form': form})

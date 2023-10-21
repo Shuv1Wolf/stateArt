@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+{{ object.title }}
+{% endblock %}
+
+{% block main %}
+<div class="content-section">
+                <h1 class="h1-title">{{ object.title_h1_1 }}</h1>
+                <div class="two-images">
+                    <img src="{{ object.img_article.url }}" alt="" class="two-images-one">
+                </div>
+                <div class="project-table">
+                    <div class="project-table-line">
+                        <div class="project-table-first-column main-text strong">Год</div>
+                        <div class="project-table-second-column main-text">{{ object.year }}</div>
+                    </div>
+                    <div class="project-table-line">
+                        <div class="project-table-first-column main-text strong">Название</div>
+                        <div class="project-table-second-column main-text">{{ object.name }}</div>
+                    </div>
+                    <div class="project-table-line">
+                        <div class="project-table-first-column main-text strong">Адрес</div>
+                        <div class="project-table-second-column main-text">{{ object.address }}</div>
+                    </div>
+                    <div class="project-table-line">
+                        <div class="project-table-first-column main-text strong">Дизайн конструкций</div>
+                        <div class="project-table-second-column main-text">{{ object.design }}</div>
+                    </div>
+                    <div class="project-table-line">
+                        <div class="project-table-first-column main-text strong">Дополнительная информация</div>
+                        <div class="project-table-second-column main-text">{{ object.additionally }}</div>
+                    </div>
+                </div>
+                <div class="grid">
+                    {% if object.img1.url != "" %}
+                        <img src="{{ object.img1.url }}" alt="" class="image-grid-block_image image-grid-block_part">
+                    {% endif %}
+                    {% if object.img2.url != "" %}
+                        <img src="{{ object.img2.url }}" alt="" class="image-grid-block_image image-grid-block_part">
+                    {% endif %}
+                    {% if object.img3.url != "" %}
+                        <img src="{{ object.img3.url }}" alt="" class="image-grid-block_image image-grid-block_part">
+                    {% endif %}
+                    {% if object.img4.url != "" %}
+                        <img src="{{ object.img4.url }}" alt="" class="image-grid-block_image image-grid-block_part">
+                    {% endif %}
+                    {% if object.img5.url != "" %}
+                        <img src="{{ object.img5.url }}" alt="" class="image-grid-block_image image-grid-block_part">
+                    {% endif %}
+                    {% if object.img6.url != "" %}
+                        <img src="{{ object.img6.url }}" alt="" class="image-grid-block_image image-grid-block_part">
+                    {% endif %}
+                    {% if object.img7.url != "" %}
+                        <img src="{{ object.img7.url }}" alt="" class="image-grid-block_image image-grid-block_part">
+                    {% endif %}
+                    {% if object.img8.url != "" %}
+                        <img src="{{ object.img8.url }}" alt="" class="image-grid-block_image image-grid-block_part">
+                    {% endif %}
+                    {% if object.img9.url != "" %}
+                        <img src="{{ object.img9.url }}" alt="" class="image-grid-block_image image-grid-block_part">
+                    {% endif %}
+                    {% if object.img10.url != "" %}
+                        <img src="{{ object.img10.url }}" alt="" class="image-grid-block_image image-grid-block_part">
+                    {% endif %}
+                    {% if object.img11.url != "" %}
+                        <img src="{{ object.img11.url }}" alt="" class="image-grid-block_image image-grid-block_part">
+                    {% endif %}
+                    {% if object.img12.url != "" %}
+                        <img src="{{ object.img12.url }}" alt="" class="image-grid-block_image image-grid-block_part">
+                    {% endif %}
+                </div>
+            </div>
+{% endblock %}

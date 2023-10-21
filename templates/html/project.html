@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+Проекты и работы компании State-Art в Москве
+{% endblock %}
+
+{% block main %}
+    {% for i in object_list %}
+            <div class="image-grid-block">
+                    <div class="grid">
+                        <a href="{% url 'project_detail' i.slug %}" class="image-grid-block_part link-text with-margin align-center">
+                            <img src="{{ i.img_title.url }}" alt="" class="image-grid-block_image">
+                            {{ i.title_article }}
+                        </a>
+                    </div>
+            </div>
+    {% endfor %}
+{% endblock %}
