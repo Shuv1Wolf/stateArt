@@ -99,6 +99,38 @@ class Project(models.Model):
         verbose_name_plural = "Проекты"
 
 
+class Work_Example(models.Model):
+    slug = models.SlugField(verbose_name="ЧПУ")
+    title = models.CharField(max_length=200, verbose_name="Блок title в html")
+
+    title_article = models.CharField(max_length=250, verbose_name="Заголовок на главной странице")
+    img_title = models.ImageField(upload_to="static/upload_img/", verbose_name="img на главной странице")
+
+    title_h1_1 = models.CharField(max_length=250, verbose_name="Заголовок (h1) на странице главной странице примеров")
+    description_1 = models.TextField(verbose_name="Описание (блок 1)")
+    description_2 = models.TextField(verbose_name="Описание в рамке (блок 2) ")
+    img1 = models.ImageField(upload_to="static/upload_img/", verbose_name="img1", blank=True, null=True)
+    img2 = models.ImageField(upload_to="static/upload_img/", verbose_name="img2", blank=True, null=True)
+    img3 = models.ImageField(upload_to="static/upload_img/", verbose_name="img3", blank=True, null=True)
+    img4 = models.ImageField(upload_to="static/upload_img/", verbose_name="img4", blank=True, null=True)
+    img5 = models.ImageField(upload_to="static/upload_img/", verbose_name="img5", blank=True, null=True)
+    img6 = models.ImageField(upload_to="static/upload_img/", verbose_name="img6", blank=True, null=True)
+    img7 = models.ImageField(upload_to="static/upload_img/", verbose_name="img7", blank=True, null=True)
+    img8 = models.ImageField(upload_to="static/upload_img/", verbose_name="img8", blank=True, null=True)
+    img9 = models.ImageField(upload_to="static/upload_img/", verbose_name="img9", blank=True, null=True)
+    img10 = models.ImageField(upload_to="static/upload_img/", verbose_name="img10", blank=True, null=True)
+    img11 = models.ImageField(upload_to="static/upload_img/", verbose_name="img11", blank=True, null=True)
+    img12 = models.ImageField(upload_to="static/upload_img/", verbose_name="img12", blank=True, null=True)
+
+    def __str__(self):
+        return self.title_article
+
+    class Meta:
+        verbose_name = "Примеры работ на главной странице"
+        verbose_name_plural = "Примеры работ на главной странице"
+
+
+
 
 
 

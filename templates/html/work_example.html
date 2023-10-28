@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+{{ object.title }}
+{% endblock %}
+
+{% block main %}
+<div class="content-section">
+                <div class="only-text-block">
+                    <h1 class="h1-title with-margin">
+                        {{ object.title_h1_1 }}
+                    </h1>
+                    <p class="main-text with-margin">
+<!--                        {{ object.description_1 }}-->
+                </div>
+                <div class="bordered-block">
+                    <p class="main-text align-center">
+                        Для того чтобы узнать цены, купить или заказать изготовление нестандартного оборудования из
+                        металла или нержавеющей стали, Вы можете обратиться к нам по телефонам: <span class="strong">+7 (916) 316 06 96</span>, на
+                        почту <a href="#" class="link-text">irina-st22@yandex.ru</a> или заполнив <a href="#" class="link-text">форму обратной связи</a>
+                    </p>
+                </div>
+                {% if object.img1.url != "" %}
+                <div class="two-photos-block">
+                        <img src="{{ object.img1.url }}" alt="">
+                    {% endif %}
+                    {% if object.img2.url != "" %}
+                        <img src="{{ object.img2.url }}" alt="">
+                    {% endif %}
+                </div>
+                {% if object.img3.url != "" %}
+                <div class="two-photos-block">
+                        <img src="{{ object.img3.url }}" alt="">
+                    {% endif %}
+                    {% if object.img4.url != "" %}
+                        <img src="{{ object.img4.url }}" alt="">
+                    {% endif %}
+                </div>
+                {% if object.img5.url != "" %}
+                <div class="two-photos-block">
+                        <img src="{{ object.img5.url }}" alt="">
+                    {% endif %}
+                    {% if object.img6.url != "" %}
+                        <img src="{{ object.img6.url }}" alt="">
+                    {% endif %}
+                </div>
+                {% if object.img7.url != "" %}
+                <div class="two-photos-block">
+                        <img src="{{ object.img7.url }}" alt="">
+                    {% endif %}
+                    {% if object.img8.url != "" %}
+                        <img src="{{ object.img8.url }}" alt="">
+                    {% endif %}
+                </div>
+                {% if object.img9.url != "" %}
+                <div class="two-photos-block">
+                        <img src="{{ object.img9.url }}" alt="">
+                    {% endif %}
+                    {% if object.img10.url != "" %}
+                        <img src="{{ object.img10.url }}" alt="">
+                    {% endif %}
+                </div>
+                {% if object.img11.url != "" %}
+                <div class="two-photos-block">
+                        <img src="{{ object.img11.url }}" alt="">
+                    {% endif %}
+                    {% if object.img12.url != "" %}
+                        <img src="{{ object.img12.url }}" alt="">
+                    {% endif %}
+                </div>
+            </div>
+{% endblock %}

@@ -60,67 +60,12 @@
                 <div class="image-grid-block">
                     <h2 class="h2-title with-margin">Примеры работ</h2>
                     <div class="grid">
-                        <a href="#" class="image-grid-block_part link-text with-margin align-center">
-                            <img src="./content/6.jpg" alt="" class="image-grid-block_image">
-                            Сдвижные навесы
+                        {% for i in work_example %}
+                        <a href="{% url 'work_example' i.slug %}" class="image-grid-block_part link-text with-margin align-center">
+                            <img src="{{ i.img_title.url }}" alt="" class="image-grid-block_image">
+                            {{ i.title_article }}
                         </a>
-                        <a href="#" class="image-grid-block_part link-text with-margin align-center">
-                            <img src="./content/7.jpg" alt="" class="image-grid-block_image">
-                            Почтовые ящики из металла
-                        </a>
-                        <a href="#" class="image-grid-block_part link-text with-margin align-center">
-                            <img src="./content/8.jpg" alt="" class="image-grid-block_image">
-                            Декоративные Hi-Tech ограждения
-                        </a>
-                        <a href="#" class="image-grid-block_part link-text with-margin align-center">
-                            <img src="./content/9.jpg" alt="" class="image-grid-block_image">
-                            Металл торговое оборудование
-                        </a>
-                        <a href="#" class="image-grid-block_part link-text with-margin align-center">
-                            <img src="./content/10.jpg" alt="" class="image-grid-block_image">
-                            Барные стойки из металла
-                        </a>
-                        <a href="#" class="image-grid-block_part link-text with-margin align-center">
-                            <img src="./content/11.jpg" alt="" class="image-grid-block_image">
-                            Мебель стиль лофт
-                        </a>
-                        <a href="#" class="image-grid-block_part link-text with-margin align-center">
-                            <img src="./content/12.jpg" alt="" class="image-grid-block_image">
-                            Нержавеющие лестницы
-                        </a>
-                        <a href="#" class="image-grid-block_part link-text with-margin align-center">
-                            <img src="./content/13.jpg" alt="" class="image-grid-block_image">
-                            Консоли и подстолья
-                        </a>
-                        </a>
-                        <a href="#" class="image-grid-block_part link-text with-margin align-center">
-                            <img src="./content/14.jpg" alt="" class="image-grid-block_image">
-                            Кухни из нержавейки
-                        </a>
-                        <a href="#" class="image-grid-block_part link-text with-margin align-center">
-                            <img src="./content/15.jpg" alt="" class="image-grid-block_image">
-                            Элементы интерьера в клубе Сахар
-                        </a>
-                        <a href="#" class="image-grid-block_part link-text with-margin align-center">
-                            <img src="./content/16.jpg" alt="" class="image-grid-block_image">
-                            Каркасы и фермы из нержавейки
-                        </a>
-                        <a href="#" class="image-grid-block_part link-text with-margin align-center">
-                            <img src="./content/17.jpg" alt="" class="image-grid-block_image">
-                            Мебель из нержавеющей стали
-                        </a>
-                        <a href="#" class="image-grid-block_part link-text with-margin align-center">
-                            <img src="./content/18.jpg" alt="" class="image-grid-block_image">
-                            Эксклюзивные корпсуа, стенды и пилоны
-                        </a>
-                        <a href="#" class="image-grid-block_part link-text with-margin align-center">
-                            <img src="./content/19.jpg" alt="" class="image-grid-block_image">
-                            Типовые стандартные ограждения
-                        </a>
-                        <a href="#" class="image-grid-block_part link-text with-margin align-center">
-                            <img src="./content/20.jpg" alt="" class="image-grid-block_image">
-                            Интегрированные мойки из нержавейки
-                        </a>
+                        {% endfor %}
                     </div>
 
                 </div>

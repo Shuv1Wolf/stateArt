@@ -195,20 +195,21 @@
             </div>
 
 
-            <form method="post">
+<!--            <form method="post">-->
 
-                {% csrf_token %}
-                {{ form.phone_number }}
-                {{ form.time }}
-                {{ form.name }}
-                {{ form.captcha }}
-                <h3 hidden>{{ form.url }}</h3>
-                <script>
-                    const url = window.location.href;
-                    document.getElementById('id_url').value = url;
-                </script>
-                <input type="submit" value="Submit">
-            </form>
+<!--                {% csrf_token %}-->
+<!--                {{ form.phone_number }}-->
+<!--                {{ form.time }}-->
+<!--                {{ form.name }}-->
+<!--                {{ form.captcha }}-->
+<!--                <h3 hidden>{{ form.url }}</h3>-->
+<!--                <script>-->
+<!--                    const url = window.location.href;-->
+<!--                    document.getElementById('id_url').value = url;-->
+<!--                </script>-->
+<!--                <input type="submit" value="Submit">-->
+<!--            </form>-->
+
 
 
             {% block main %}
