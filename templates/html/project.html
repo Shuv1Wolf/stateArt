@@ -6,14 +6,27 @@
 {% endblock %}
 
 {% block main %}
-    {% for i in object_list %}
-            <div class="image-grid-block">
+    <div class="content-section">
+                <div class="only-text-block">
+                    <h1 class="h1-title with-margin">
+                        Проекты и обьекты
+                    </h1>
                     <div class="grid">
+                        {% for i in object_list %}
                         <a href="{% url 'project_detail' i.slug %}" class="image-grid-block_part link-text with-margin align-center">
                             <img src="{{ i.img_title.url }}" alt="" class="image-grid-block_image">
                             {{ i.title_article }}
                         </a>
+                        {% endfor %}
                     </div>
+                    <div class="catalog-links">
+                        {% for i in work_example %}
+                        <div class="catalog-link">
+                            <a href="{% url 'project_example' i.slug %}" class="link-text with-margin">{{ i.title_article }}</a>
+                        </div>
+                        <p class="main-text with-margin">{{ i.title_description }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
-    {% endfor %}
 {% endblock %}

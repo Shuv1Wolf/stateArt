@@ -1,7 +1,7 @@
 from django.views.generic import ListView, DetailView, TemplateView
 from django.shortcuts import HttpResponseRedirect
 from django.views.generic.edit import FormMixin
-from main.models import Article, News, Reviews, Project,Work_Example
+from main.models import Article, News, Reviews, Project, Work_Example, Work_Example_In_Project
 from .forms import Form
 
 
@@ -86,6 +86,11 @@ class ProjectView(FormMixin, ListView):
     model = Project
     template_name = "html/project.html"
 
+    def get_context_data(self, **kwargs):
+        context = super(ProjectView, self).get_context_data(**kwargs)
+        context['work_example'] = Work_Example_In_Project.objects.all()
+        return context
+
     def post(self, request, *args, **kwargs):
         form = Form(request.POST)
         if form.is_valid():
@@ -114,6 +119,21 @@ class Work_ExampleDetailView(FormMixin, DetailView):
     form_class = Form
     model = Work_Example
     template_name = "html/work_example.html"
+    context_object_name = 'object'
+
+    def post(self, request, *args, **kwargs):
+        form = Form(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(request.path, {'form': form})
+        else:
+            return HttpResponseRedirect(request.path, {'form': form})
+
+
+class Work_Example_In_ProjectDetailView(FormMixin, DetailView):
+    form_class = Form
+    model = Work_Example_In_Project
+    template_name = "html/work_example_2.html"
     context_object_name = 'object'
 
     def post(self, request, *args, **kwargs):
