@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{% static 'content/Favicon.png' %}" type="png">
-    <link rel="stylesheet" href="\static\css\main.css?{% now 'U' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
     <title>Студия StateArt - Нержавеющие металлоконструкции</title>
     <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900"
         rel="stylesheet">
@@ -87,8 +87,8 @@
 
         <nav class="header-navbar">
             <li class="navlink"><a href="{% url 'homepage' %}">Главная</a></li>
-            <li class="navlink"><a href="#">Доставка и оплата</a></li>
-            <li class="navlink"><a href="#">Как заказать</a></li>
+            <li class="navlink"><a href="{% url 'delivery' %}">Доставка и оплата</a></li>
+            <li class="navlink"><a href="{% url 'offer' %}">Как заказать</a></li>
             <li class="navlink"><a href="{% url 'poleznye-stati' %}">Статьи</a></li>
             <li class="navlink"><a href="{% url 'reviews' %}">Отзывы</a></li>
             <li class="navlink"><a href="{% url 'contacts' %}">Контакты</a></li>
@@ -97,8 +97,8 @@
             <img class="header_navbar_button" src="{% static 'content/Burger.svg' %}"></img>
             <nav class="header-navbar_hiden header-navbar_hiden_hide">
                 <li class="navlink"><a href="{% url 'homepage' %}">Главная</a></li>
-                <li class="navlink"><a href="#">Доставка и оплата</a></li>
-                <li class="navlink"><a href="#">Как заказать</a></li>
+                <li class="navlink"><a href="{% url 'delivery' %}">Доставка и оплата</a></li>
+                <li class="navlink"><a href="{% url 'offer' %}">Как заказать</a></li>
                 <li class="navlink"><a href="{% url 'poleznye-stati' %}">Статьи</a></li>
                 <li class="navlink"><a href="{% url 'reviews' %}">Отзывы</a></li>
                 <li class="navlink"><a href="{% url 'contacts' %}">Контакты</a></li>

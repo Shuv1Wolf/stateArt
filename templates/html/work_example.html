@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block main %}
-<div class="content-section">
+            <div class="content-section">
                 <div class="only-text-block">
                     <h1 class="h1-title with-margin">
                         {{ object.title_h1_1 }}
@@ -18,57 +18,86 @@
                     <p class="main-text align-center">
                         {{ object.description_1 }}
                         Для того чтобы узнать цены, купить или заказать изготовление нестандартного оборудования из
-                        металла или нержавеющей стали, Вы можете обратиться к нам по телефонам: <span class="strong">+7 (916) 316 06 96</span>, на
-                        почту <a href="#" class="link-text">irina-st22@yandex.ru</a> или заполнив <a href="#" class="link-text">форму обратной связи</a>
+                        металла или нержавеющей стали, Вы можете обратиться к нам по телефонам: <span class="strong">+7
+                            (916) 316 06 96</span>, на
+                        почту <a href="#" class="link-text">irina-st22@yandex.ru</a> или заполнив <a href="#"
+                            class="link-text callback-btn">форму обратной связи</a>
                     </p>
                 </div>
                 {% if object.img1.url != "" %}
                 <div class="two-photos-block">
-                        <img src="{{ object.img1.url }}" alt="">
+
+                    <a href="{{ object.img1.url }}" class="fancybox two-images-one" data-fancybox-clickSlide="false">
+                                <img src="{{ object.img1.url }}" alt="Изображение" >
+                    </a>
+
                     {% endif %}
                     {% if object.img2.url != "" %}
-                        <img src="{{ object.img2.url }}" alt="">
-                    {% endif %}
+                    <a href="{{ object.img2.url }}" class="fancybox two-images-one" data-fancybox-clickSlide="false">
+                                <img src="{{ object.img2.url }}" alt="Изображение" >
+                    </a>
                 </div>
+                {% endif %}
                 {% if object.img3.url != "" %}
                 <div class="two-photos-block">
-                        <img src="{{ object.img3.url }}" alt="">
+                    <a href="{{ object.img3.url }}" class="fancybox two-images-one" data-fancybox-clickSlide="false">
+                                <img src="{{ object.img3.url }}" alt="Изображение" >
+                    </a>
                     {% endif %}
                     {% if object.img4.url != "" %}
-                        <img src="{{ object.img4.url }}" alt="">
-                    {% endif %}
+                    <a href="{{ object.img4.url }}" class="fancybox two-images-one" data-fancybox-clickSlide="false">
+                                <img src="{{ object.img4.url }}" alt="Изображение" >
+                    </a>
                 </div>
+                {% endif %}
                 {% if object.img5.url != "" %}
                 <div class="two-photos-block">
-                        <img src="{{ object.img5.url }}" alt="">
+                    <a href="{{ object.img5.url }}" class="fancybox two-images-one" data-fancybox-clickSlide="false">
+                                <img src="{{ object.img5.url }}" alt="Изображение" >
+                    </a>
                     {% endif %}
                     {% if object.img6.url != "" %}
-                        <img src="{{ object.img6.url }}" alt="">
-                    {% endif %}
+                    <a href="{{ object.img6.url }}" class="fancybox two-images-one" data-fancybox-clickSlide="false">
+                                <img src="{{ object.img6.url }}" alt="Изображение" >
+                    </a>
                 </div>
+                {% endif %}
                 {% if object.img7.url != "" %}
                 <div class="two-photos-block">
-                        <img src="{{ object.img7.url }}" alt="">
+                    <a href="{{ object.img7.url }}" class="fancybox two-images-one" data-fancybox-clickSlide="false">
+                                <img src="{{ object.img7.url }}" alt="Изображение" >
+                    </a>
                     {% endif %}
                     {% if object.img8.url != "" %}
-                        <img src="{{ object.img8.url }}" alt="">
-                    {% endif %}
+                    <a href="{{ object.img8.url }}" class="fancybox two-images-one" data-fancybox-clickSlide="false">
+                                <img src="{{ object.img8.url }}" alt="Изображение" >
+                    </a>
                 </div>
+                {% endif %}
                 {% if object.img9.url != "" %}
                 <div class="two-photos-block">
-                        <img src="{{ object.img9.url }}" alt="">
+                    <a href="{{ object.img9.url }}" class="fancybox two-images-one" data-fancybox-clickSlide="false">
+                                <img src="{{ object.img9.url }}" alt="Изображение" >
+                    </a>
                     {% endif %}
                     {% if object.img10.url != "" %}
-                        <img src="{{ object.img10.url }}" alt="">
-                    {% endif %}
+                    <a href="{{ object.img10.url }}" class="fancybox two-images-one" data-fancybox-clickSlide="false">
+                                <img src="{{ object.img10.url }}" alt="Изображение" >
+                    </a>
                 </div>
+                {% endif %}
                 {% if object.img11.url != "" %}
                 <div class="two-photos-block">
-                        <img src="{{ object.img11.url }}" alt="">
+                    <a href="{{ object.img11.url }}" class="fancybox two-images-one" data-fancybox-clickSlide="false">
+                                <img src="{{ object.img11.url }}" alt="Изображение" >
+                    </a>
                     {% endif %}
                     {% if object.img12.url != "" %}
-                        <img src="{{ object.img12.url }}" alt="">
-                    {% endif %}
+                    <a href="{{ object.img12.url }}" class="fancybox two-images-one" data-fancybox-clickSlide="false">
+                                <img src="{{ object.img12.url }}" alt="Изображение" >
+                    </a>
                 </div>
+                {% endif %}
             </div>
-{% endblock %}
+
+        {% endblock %}

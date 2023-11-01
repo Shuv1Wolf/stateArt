@@ -860,3 +860,8 @@ body {
 .callback-banner-button{
     color: #fff;
 }
+
+.fancybox >*{
+    width: 100% !important;
+    height: auto !important;
+}

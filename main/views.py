@@ -143,3 +143,20 @@ class Work_Example_In_ProjectDetailView(FormMixin, DetailView):
             return HttpResponseRedirect(request.path, {'form': form})
         else:
             return HttpResponseRedirect(request.path, {'form': form})
+
+
+class DeliveryView(TemplateView):
+    template_name = 'html/delivery.html'
+
+
+class How_to_offerView(TemplateView, FormMixin):
+    template_name = 'html/how_to_offer.html'
+    form_class = Form
+
+    def post(self, request, *args, **kwargs):
+        form = Form(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(request.path, {'form': form})
+        else:
+            return HttpResponseRedirect(request.path, {'form': form})
