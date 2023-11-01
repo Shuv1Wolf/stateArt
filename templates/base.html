@@ -6,10 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{% static 'content/Favicon.png' %}" type="png">
-    <link rel="stylesheet" href="{% static 'C:\Users\mskur\Desktop\stateArt\static\css\main.css' %}">
-    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="\static\css\main.css?{% now 'U' %}">
+    <title>Студия StateArt - Нержавеющие металлоконструкции</title>
     <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900"
-        rel="stylesheet" />
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'node_modules/fancybox/dist/css/jquery.fancybox.css' %}">
     {% block css %}
     {% endblock %}
 </head>
@@ -47,11 +48,43 @@
             <div class="main-header-column last">
                 <p class="main-text align-right">Новая Москва, Троицк, <br>
                     Фабричная площадь, д.1</p>
-                <a href="#" class="button callback-button">
+                <p class="button callback-button callback-btn">
                     Обратный звонок
-                </a>
+                </p>
             </div>
         </header>
+
+
+{% load widget_tweaks %}
+        <div class="callback-form-wrapper" id="callback-form">
+            <div class="callback-form" onclick="event.stopPropagation()">
+                <h2 class="h2-title form-title with-margin align-center">Закажите обратный звонок</h2>
+                <p class="main-text align-center with-margin">
+                    *Если Вы спешите - укажите только свой номер телефона
+                </p>
+                <form class="callback-form-form" method="post">
+                    {% csrf_token %}
+                    {{ form.phone_number|attr:'class:callback-form-input'|attr:'type:tel'|attr:'id:phone'|attr:'placeholder:Номер телефона*' }}
+                    {{ form.time|attr:'class:callback-form-input'|attr:'placeholder:Удобное время для звонка' }}
+                    {{ form.name|attr:'class:callback-form-input'|attr:'placeholder:Ваше имя' }}
+                    {{ form.captcha }}
+
+                    {{ form.url|attr:'hidden' }}
+                    <script>
+                        const url = window.location.href;
+                        document.getElementById('id_url').value = url;
+                    </script>
+                    <p class="main-text align-center with-margin">
+                        Нажимая кнопку, я принимаю <a href="#" class="link-text">соглашение о конфиденциальности</a> и
+                        соглашаюсь с обработкой персональных данных
+                    </p>
+                    <button type="submit" class="submit-btn">Отправить</button>
+                </form>
+            </div>
+        </div>
+
+
+
         <nav class="header-navbar">
             <li class="navlink"><a href="{% url 'homepage' %}">Главная</a></li>
             <li class="navlink"><a href="#">Доставка и оплата</a></li>
@@ -193,25 +226,6 @@
                     </nav>
                 </div>
             </div>
-
-
-<!--            <form method="post">-->
-
-<!--                {% csrf_token %}-->
-<!--                {{ form.phone_number }}-->
-<!--                {{ form.time }}-->
-<!--                {{ form.name }}-->
-<!--                {{ form.captcha }}-->
-<!--                <h3 hidden>{{ form.url }}</h3>-->
-<!--                <script>-->
-<!--                    const url = window.location.href;-->
-<!--                    document.getElementById('id_url').value = url;-->
-<!--                </script>-->
-<!--                <input type="submit" value="Submit">-->
-<!--            </form>-->
-
-
-
             {% block main %}
 
             {% endblock %}
@@ -227,12 +241,34 @@
                     Copyright © 2002-2023
                     Цех "Стэйт Арт - ДЕККОН"
                 </p>
-                <a href="#" class="main-text footer-text link-text">Отправить заявку</a>
+                <p class="main-text footer-text link-text callback-btn">Отправить заявку</p>
             </div>
         </footer>
         <div class="btn-up btn-up_hide"></div>
     </div>
+
+
+    <script src="{% static 'node_modules/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'node_modules/fancybox/dist/js/jquery.fancybox.js' %}"></script>
     <script>
+        $(".fancybox").fancybox({
+            hideOnContentClick: false
+        });
+        const callbackBtn = document.querySelectorAll('.callback-btn');
+        callbackBtn.forEach(button => {
+            button.addEventListener('click', () => document.getElementById('callback-form').classList.add('callback-form-wrapper-active'))
+        })
+        const callbackBtnId = {
+            el: document.getElementById('callback-btn'),
+            addEventListener() {
+                this.el.onclick = () => {
+                    document.getElementById('callback-form').classList.add('callback-form-wrapper-active')
+                }
+            }
+        }
+        const callbackForm = document.getElementById('callback-form');
+        callbackForm.addEventListener('click', () => callbackForm.classList.remove('callback-form-wrapper-active'))
+        callbackBtnId.addEventListener();
         const btnUp = {
             el: document.querySelector('.btn-up'),
             show() {

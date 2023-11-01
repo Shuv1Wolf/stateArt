@@ -6,8 +6,28 @@
 {% endblock %}
 
 {% block main %}
-    {% for i in reviews %}
-        {{ i.name }}
-        {{ i.review }}
-    {% endfor %}
+<div class="content-section">
+                <h1 class="h1-title with-margin">Отзывы</h1>
+                <p class="main-text with-margin">
+                    Уважаемые клиенты, мы благодарим Вас за время, которое Вы уделяете для отзыва о нашем сервисе. Это
+                    очень ценная информация для нас, мы постоянно развиваемся и стремимся к высокому качеству
+                    обслуживания. Благодаря Вашим отзывам, мы оперативно принимаем меры для улучшения качества
+                    обслуживания. Если вы хотите оставить отзыв или пожелание, то пишите на «irina-st22@yandex.ru» или
+                    пройдите по QR-коду на нашу страничку в справочнике.
+                </p>
+                <a href="#" class="with-margin">
+                    <img src="{% static 'content/img/card-SA_200x493.jpg' %}" alt="" class="two-images-one">
+                </a>
+                <img src="{% static 'content/img/FB_otzyv_-1.jpg' %}" alt="" class="screenshot">
+                <img src="{% static 'content/img/FB_otzyv_-2.jpg' %}" alt="" class="screenshot">
+                <div class="reviews">
+                    {% for i in reviews %}
+                    <div class="review">
+                        <p class="reviewer with-margin">
+                            {{ i.name }}</p>
+                        <p class="review-text">{{ i.review }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
 {% endblock %}

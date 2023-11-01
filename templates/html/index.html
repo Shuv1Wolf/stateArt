@@ -10,7 +10,7 @@
                 <h1 class="h1-title align-center">Производство металлических конструкций</h1>
                 <div class="three-columns-block">
                     <div class="three-columns-block_column">
-                        <img src="{% static 'content/img/1.jpg'%}" alt="" class="default-image">
+                        <img src="{% static 'content/img/1.jpg' %}" alt="" class="default-image">
                         <p class="main-text red-text with-margin">
                             РАЗРАБОТКА и изготовление мебели и элементов интерьера:
                         </p>
@@ -112,7 +112,9 @@
                     <p class="main-text with-margin">{{ i.news }}</p>
                     {% if i.img.url != "" %}
                         <div class="two-images">
-                            <img src="{{ i.img.url }}" alt="" class="two-images-one">
+                            <a href="{{ i.img.url }}" class="fancybox" data-fancybox-clickSlide="false">
+                                <img src="{{ i.img.url }}" alt="Изображение" class="two-images-one">
+                            </a>
                         </div>
                     {% endif %}
                     {% endfor %}

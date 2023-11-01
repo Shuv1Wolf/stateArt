@@ -781,8 +781,12 @@ body {
     border-bottom: 1px solid #333;
 }
 
-.fancybox {
-    display: block !important;
+.fancybox-wrapper{
+    width: 100%;
+}
+
+.fancybox-wrapper *{
+    width: 100%;
 }
 
 .callback-form-wrapper {
@@ -847,4 +851,12 @@ body {
     cursor: pointer;
     border-radius: 5px;
     font-size: 20px;
+}
+
+.callback-btn{
+    cursor: pointer !important;
+}
+
+.callback-banner-button{
+    color: #fff;
 }
