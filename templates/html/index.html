@@ -108,7 +108,7 @@
                 </div>
                 <div class="only-text-block">
                     <h2 class="h2-title with-margin">Новости компании Стэйт-Арт (ДЕККОН):</h2>
-                    {% for i in news %}
+                    {% for i in news reversed %}
                     <p class="main-text with-margin">{{ i.news }}</p>
                     {% if i.img.url != "" %}
                         <div class="two-images">
