@@ -25,7 +25,7 @@
                     <div class="review">
                         <p class="reviewer with-margin">
                             {{ i.name }}</p>
-                        <p class="review-text">{{ i.review }}</p>
+                        <p class="review-text">{{ i.review|safe }}</p>
                     </div>
                     {% endfor %}
                 </div>

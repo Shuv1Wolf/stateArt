@@ -109,7 +109,7 @@
                 <div class="only-text-block">
                     <h2 class="h2-title with-margin">Новости компании Стэйт-Арт (ДЕККОН):</h2>
                     {% for i in news reversed %}
-                    <p class="main-text with-margin">{{ i.news }}</p>
+                    <p class="main-text with-margin">{{ i.news|safe }}</p>
                     {% if i.img.url != "" %}
                         <div class="two-images">
                             <a href="{{ i.img.url }}" class="fancybox" data-fancybox-clickSlide="false">
