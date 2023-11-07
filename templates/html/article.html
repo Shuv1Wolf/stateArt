@@ -22,16 +22,16 @@
                     <h3 class="h2-title strong with-margin">Темы разные. О применении металла (нержавейки) в
                         конструкциях вокруг нас.</h3>
                 </div>
-{% for i in object_list %}
             <div class="image-grid-block">
                     <div class="grid">
+                        {% for i in object_list %}
                         <a href="{% url 'article_detail' i.slug %}" class="image-grid-block_part link-text with-margin align-center">
                             <img src="{{ i.img_title.url }}" alt="" class="image-grid-block_image">
                             {{ i.title_article }}
                         </a>
+                        {% endfor %}
                     </div>
             </div>
-{% endfor %}
                 <div class="callback-banner">
                     <div class="callback-banner-callback-part">
                         <p class="callback-banner-title">Получить бесплатную консультацию</p>
