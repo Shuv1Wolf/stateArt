@@ -31,7 +31,7 @@ ul {
 a:active,
 a:hover,
 
-.white {
+a {
     text-decoration: none;
     color: #fff;
 }

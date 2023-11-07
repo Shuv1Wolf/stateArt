@@ -5,6 +5,14 @@
 {{ object.title }}
 {% endblock %}
 
+{% block canonical %}
+{{ object.canonical }}
+{% endblock %}
+
+{% block description %}
+{{ object.description }}
+{% endblock %}
+
 {% block main %}
 <div class="content-section">
                 <h1 class="h1-title">{{ object.title_h1_1|safe }}</h1>

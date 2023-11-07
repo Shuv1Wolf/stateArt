@@ -5,6 +5,14 @@
 {{ object.title }}
 {% endblock %}
 
+{% block canonical %}
+{{ object.canonical }}
+{% endblock %}
+
+{% block description %}
+{{ object.description }}
+{% endblock %}
+
 {% block main %}
             <div class="content-section">
                 <div class="only-text-block">
@@ -17,11 +25,6 @@
                 <div class="bordered-block">
                     <p class="main-text align-center">
                         {{ object.description_1|safe }}
-                        Для того чтобы узнать цены, купить или заказать изготовление нестандартного оборудования из
-                        металла или нержавеющей стали, Вы можете обратиться к нам по телефонам: <span class="strong">+7
-                            (916) 316 06 96</span>, на
-                        почту <a href="#" class="link-text">irina-st22@yandex.ru</a> или заполнив <a href="#"
-                            class="link-text callback-btn">форму обратной связи</a>
                     </p>
                 </div>
                 {% if object.img1.url != "" %}

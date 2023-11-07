@@ -15,7 +15,9 @@ class News(models.Model):
 
 class Article(models.Model):
     slug = models.SlugField(verbose_name="ЧПУ")
-    title = models.CharField(max_length=200, verbose_name="Блок title в html")
+    title = models.CharField(max_length=200, verbose_name="title")
+    canonical = models.CharField(max_length=255, verbose_name="canonical", blank=True, null=True)
+    description = models.CharField(max_length=255, verbose_name="description", blank=True, null=True)
 
     title_article = models.CharField(max_length=250, verbose_name="Заголовок на странице со статьями")
     img_title = models.ImageField(upload_to="static/upload_img/", verbose_name="img на странице со статьями")
@@ -23,10 +25,9 @@ class Article(models.Model):
     title_h1_1 = models.CharField(max_length=250, verbose_name="Заголовок (h1) на странице статьи")
     img_article = models.ImageField(upload_to="static/upload_img/", verbose_name="img в статье")
     description_1 = models.TextField(verbose_name="Описание статьи (блок 1)")
-    title_h1_2 = models.CharField(max_length=250, verbose_name="Второй заголовок (h1) на странице статьи для второго блока", blank=True, null=True)
+    title_h1_2 = models.CharField(max_length=250, verbose_name="Второй заголовок (h2) на странице статьи для второго блока", blank=True, null=True)
     description_2 = models.TextField(verbose_name="Описание статьи (блок 2 напротив img)", blank=True, null=True)
     description_3 = models.TextField(verbose_name="Описание статьи (блок 3 под img) ", blank=True, null=True)
-    canonical = models.TextField(verbose_name="canonical", blank=True, null=True)  #для чего?
 
     def __str__(self):
         return self.title_article
@@ -49,7 +50,7 @@ class Reviews(models.Model):
 
 
 class Form(models.Model):
-    phone_number = models.CharField(max_length=17,verbose_name="Номер телефона")
+    phone_number = models.CharField(max_length=17, verbose_name="Номер телефона")
     time = models.TimeField(verbose_name="Удобное время",
                             error_messages="Time must be entered in the format: '00:00'", blank=True)
     name = models.CharField(max_length=250, verbose_name="Имя")
@@ -65,7 +66,9 @@ class Form(models.Model):
 
 class Project(models.Model):
     slug = models.SlugField(verbose_name="ЧПУ")
-    title = models.CharField(max_length=200, verbose_name="Блок title в html")
+    title = models.CharField(max_length=200, verbose_name="title")
+    canonical = models.CharField(max_length=255, verbose_name="canonical", blank=True, null=True)
+    description = models.CharField(max_length=255, verbose_name="description", blank=True, null=True)
 
     title_article = models.CharField(max_length=250, verbose_name="Заголовок на странице со статьями")
     img_title = models.ImageField(upload_to="static/upload_img/", verbose_name="img на странице со статьями")
@@ -101,7 +104,9 @@ class Project(models.Model):
 
 class Work_Example(models.Model):
     slug = models.SlugField(verbose_name="ЧПУ")
-    title = models.CharField(max_length=200, verbose_name="Блок title в html")
+    title = models.CharField(max_length=200, verbose_name="title")
+    canonical = models.CharField(max_length=255, verbose_name="canonical", blank=True, null=True)
+    description = models.CharField(max_length=255, verbose_name="description", blank=True, null=True)
 
     title_article = models.CharField(max_length=250, verbose_name="Заголовок на главной странице")
     img_title = models.ImageField(upload_to="static/upload_img/", verbose_name="img на главной странице")
@@ -109,6 +114,7 @@ class Work_Example(models.Model):
     title_h1_1 = models.CharField(max_length=250, verbose_name="Заголовок (h1) на странице главной странице примеров")
     description_1 = models.TextField(verbose_name="Описание (блок 1)")
     description_2 = models.TextField(verbose_name="Описание в рамке (блок 2) ")
+
     img1 = models.ImageField(upload_to="static/upload_img/", verbose_name="img1 (загружать подряд по две)", blank=True, null=True)
     img2 = models.ImageField(upload_to="static/upload_img/", verbose_name="img2", blank=True, null=True)
     img3 = models.ImageField(upload_to="static/upload_img/", verbose_name="img3", blank=True, null=True)
@@ -132,7 +138,9 @@ class Work_Example(models.Model):
 
 class Work_Example_In_Project(models.Model):
     slug = models.SlugField(verbose_name="ЧПУ")
-    title = models.CharField(max_length=200, verbose_name="Блок title в html")
+    title = models.CharField(max_length=200, verbose_name="title")
+    canonical = models.CharField(max_length=255, verbose_name="canonical", blank=True, null=True)
+    description = models.CharField(max_length=255, verbose_name="description", blank=True, null=True)
 
     title_article = models.CharField(max_length=250, verbose_name="Заголовок на странице с проектами")
     title_description = models.TextField(max_length=350, verbose_name="Краткое описание на странице с проектами")
@@ -140,6 +148,8 @@ class Work_Example_In_Project(models.Model):
     title_h1_1 = models.CharField(max_length=250, verbose_name="Заголовок (h1) на странице главной странице примеров")
     description_1 = models.TextField(verbose_name="Описание (блок 1)")
     description_2 = models.TextField(verbose_name="Описание в рамке (блок 2) ")
+
+
     img1 = models.ImageField(upload_to="static/upload_img/", verbose_name="img1 (загружать подряд по две)", blank=True, null=True)
     img2 = models.ImageField(upload_to="static/upload_img/", verbose_name="img2", blank=True, null=True)
     img3 = models.ImageField(upload_to="static/upload_img/", verbose_name="img3", blank=True, null=True)
