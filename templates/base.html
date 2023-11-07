@@ -66,8 +66,8 @@
                 </p>
                 <form class="callback-form-form" method="post">
                     {% csrf_token %}
-                    {{ form.phone_number|attr:'class:callback-form-input'|attr:'type:tel'|attr:'id:phone'|attr:'placeholder:Номер телефона*' }}
-                    {{ form.time|attr:'class:callback-form-input'|attr:'placeholder:Удобное время для звонка' }}
+                    {{ form.phone_number|attr:'class:callback-form-input phone-number-field'|attr:'type:tel'|attr:'id:phone'|attr:'placeholder:Номер телефона*' }}
+                    {{ form.time|attr:'class:callback-form-input time-field'|attr:'placeholder:Удобное время для звонка' }}
                     {{ form.name|attr:'class:callback-form-input'|attr:'placeholder:Ваше имя' }}
                     {{ form.captcha }}
 
@@ -80,7 +80,12 @@
                         Нажимая кнопку, я принимаю <a href="#" class="link-text">соглашение о конфиденциальности</a> и
                         соглашаюсь с обработкой персональных данных
                     </p>
-                    <button type="submit" class="submit-btn">Отправить</button>
+                    <button  class="submit-btn">Отправить</button>
+                    {% if messages %}
+                        {% for message in messages %}
+                            <script>alert('{{ message }}')</script>
+                        {% endfor %}
+                    {% endif %}
                 </form>
             </div>
         </div>
@@ -254,9 +259,6 @@
     <script src="{% static 'node_modules/fancybox/dist/js/jquery.fancybox.js' %}"></script>
     <script src="{% static 'node_modules/input/dist/jquery.maskedinput.min.js' %}"></script>
     <script>
-        // $(document).ready(function () {
-        //     $("#phone").mask("+7 (999) 999-99-99");
-        // }); s
 
         $(".fancybox").fancybox({
             hideOnContentClick: false
@@ -320,6 +322,16 @@
             }
         }
         navbarBtn.addEventListener();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.js" type="text/javascript"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.phone-number-field').mask('+7 999 999 9999');
+
+            });
     </script>
 </body>
 

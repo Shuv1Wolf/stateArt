@@ -1,6 +1,7 @@
 from django.views.generic import ListView, DetailView, TemplateView
 from django.shortcuts import HttpResponseRedirect
 from django.views.generic.edit import FormMixin
+from django.contrib import messages
 from main.models import Article, News, Reviews, Project, Work_Example, Work_Example_In_Project
 from .forms import Form
 
@@ -16,10 +17,13 @@ class HomePageView(FormMixin, ListView):
         context['work_example'] = Work_Example.objects.all()
         return context
 
+
     def post(self, request, *args, **kwargs):
         form = Form(request.POST)
+
         if form.is_valid():
             form.save()
+            messages.success(request, 'Спасибо, Ваша заявка принята, мы перезвоним в ближайшее время')
             return HttpResponseRedirect(request.path, {'form': form})
         else:
             return HttpResponseRedirect(request.path, {'form': form})
