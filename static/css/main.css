@@ -440,6 +440,7 @@ body {
 
 .content-section {
     padding: 20px;
+    width: 100%;
 }
 
 .three-columns-block_column {
@@ -646,7 +647,7 @@ body {
 }
 
 .bordered-block {
-    width: 95%;
+    width: 95% !important;
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
