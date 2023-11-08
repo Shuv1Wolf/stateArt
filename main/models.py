@@ -14,6 +14,9 @@ help_text = '''
     <p>&lt;nav class="only-text-block-list with-margin"&gt;</p>
     <p>&lt;li class="main-text"&gt;&lt;/li&gt;</p>
     <p>&lt;/nav&gt;</p>
+    <p></p><p></p>
+    <p>ссылка на форму обратной связи: </p>
+    <p>&lt;a class=" link-text callback-btn"&gt;Отправить заявку&lt;/a&gt;</p>
     '''
 
 class News(models.Model):
