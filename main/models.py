@@ -128,7 +128,7 @@ class Work_Example(models.Model):
     title_article = models.CharField(max_length=250, verbose_name="Заголовок на главной странице")
     img_title = models.ImageField(upload_to="static/upload_img/", verbose_name="img на главной странице")
 
-    title_h1_1 = models.CharField(max_length=250, verbose_name="Заголовок (h1) на странице главной странице примеров")
+    title_h1_1 = models.CharField(max_length=250, verbose_name="Заголовок (h1) на странице примера работы")
     description_1 = models.TextField(verbose_name="Описание (блок 1)", help_text=help_text)
     description_2 = models.TextField(verbose_name="Описание в рамке (блок 2) ", help_text=help_text)
 
@@ -162,7 +162,7 @@ class Work_Example_In_Project(models.Model):
     title_article = models.CharField(max_length=250, verbose_name="Заголовок на странице с проектами")
     title_description = models.TextField(max_length=350, verbose_name="Краткое описание на странице с проектами", help_text=help_text)
 
-    title_h1_1 = models.CharField(max_length=250, verbose_name="Заголовок (h1) на странице главной странице примеров")
+    title_h1_1 = models.CharField(max_length=250, verbose_name="Заголовок (h1) на странице примера работы")
     description_1 = models.TextField(verbose_name="Описание (блок 1)", help_text=help_text)
     description_2 = models.TextField(verbose_name="Описание в рамке (блок 2)", help_text=help_text)
 
