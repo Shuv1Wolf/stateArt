@@ -1,3 +1,6 @@
+import re
+
+from django.core.exceptions import ValidationError
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 # Create your models here.
@@ -69,7 +72,7 @@ class Reviews(models.Model):
 
 class Form(models.Model):
     phone_number = PhoneNumberField(null=False)
-    time = models.TimeField(verbose_name="Удобное время", null=True, blank=True)
+    time = models.CharField(max_length=25, verbose_name="Удобное время", null=True, blank=True)
     name = models.CharField(max_length=250, verbose_name="Имя", null=True, blank=True)
     url = models.URLField(verbose_name="URL перехода", blank=True)
 
