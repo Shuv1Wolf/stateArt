@@ -1,8 +1,6 @@
-import re
-
-from django.core.exceptions import ValidationError
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
+from tinymce import models as tinymce_models
 # Create your models here.
 
 help_text = '''
@@ -23,7 +21,7 @@ help_text = '''
     '''
 
 class News(models.Model):
-    news = models.TextField(verbose_name="Текст новости", help_text=help_text)
+    news = tinymce_models.HTMLField(verbose_name="Текст новости")
     img = models.ImageField(upload_to="static/upload_img/", verbose_name="img в новости", blank=True, null=True)
 
     def __str__(self):
@@ -45,10 +43,10 @@ class Article(models.Model):
 
     title_h1_1 = models.CharField(max_length=250, verbose_name="Заголовок (h1) на странице статьи")
     img_article = models.ImageField(upload_to="static/upload_img/", verbose_name="img в статье")
-    description_1 = models.TextField(verbose_name="Описание статьи (блок 1)", help_text=help_text)
+    description_1 = tinymce_models.HTMLField(verbose_name="Описание статьи (блок 1)")
     title_h1_2 = models.CharField(max_length=250, verbose_name="Второй заголовок (h2) на странице статьи для второго блока", blank=True, null=True)
-    description_2 = models.TextField(verbose_name="Описание статьи (блок 2 напротив img)", blank=True, null=True, help_text=help_text)
-    description_3 = models.TextField(verbose_name="Описание статьи (блок 3 под img) ", blank=True, null=True, help_text=help_text)
+    description_2 = tinymce_models.HTMLField(verbose_name="Описание статьи (блок 2 напротив img)", blank=True, null=True)
+    description_3 = tinymce_models.HTMLField(verbose_name="Описание статьи (блок 3 под img) ", blank=True, null=True)
 
     def __str__(self):
         return self.title_article
@@ -60,7 +58,7 @@ class Article(models.Model):
 
 class Reviews(models.Model):
     name = models.CharField(max_length=200, verbose_name="ФИ того, кто написал отзыв")
-    review = models.TextField(verbose_name="Отзыв", help_text=help_text)
+    review = tinymce_models.HTMLField(verbose_name="Отзыв")
 
     def __str__(self):
         return self.name
@@ -99,7 +97,7 @@ class Project(models.Model):
     name = models.CharField(max_length=250, verbose_name='Название', help_text=help_text)
     address = models.CharField(max_length=250, verbose_name='Адрес')
     design = models.CharField(max_length=250, verbose_name='Дизайн конструкций', help_text=help_text)
-    additionally = models.TextField(verbose_name='Дополнительная информация', help_text=help_text)
+    additionally = tinymce_models.HTMLField(verbose_name='Дополнительная информация')
 
     img1 = models.ImageField(upload_to="static/upload_img/", verbose_name="img1", blank=True, null=True)
     img2 = models.ImageField(upload_to="static/upload_img/", verbose_name="img2", blank=True, null=True)
@@ -132,8 +130,8 @@ class Work_Example(models.Model):
     img_title = models.ImageField(upload_to="static/upload_img/", verbose_name="img на главной странице")
 
     title_h1_1 = models.CharField(max_length=250, verbose_name="Заголовок (h1) на странице примера работы")
-    description_1 = models.TextField(verbose_name="Описание (блок 1)", help_text=help_text)
-    description_2 = models.TextField(verbose_name="Описание в рамке (блок 2) ", help_text=help_text)
+    description_1 = tinymce_models.HTMLField(verbose_name="Описание (блок 1)")
+    description_2 = tinymce_models.HTMLField(verbose_name="Описание в рамке (блок 2) ")
 
     img1 = models.ImageField(upload_to="static/upload_img/", verbose_name="img1", blank=True, null=True)
     img2 = models.ImageField(upload_to="static/upload_img/", verbose_name="img2", blank=True, null=True)
@@ -166,8 +164,8 @@ class Work_Example_In_Project(models.Model):
     title_description = models.TextField(max_length=350, verbose_name="Краткое описание на странице с проектами", help_text=help_text)
 
     title_h1_1 = models.CharField(max_length=250, verbose_name="Заголовок (h1) на странице примера работы")
-    description_1 = models.TextField(verbose_name="Описание (блок 1)", help_text=help_text)
-    description_2 = models.TextField(verbose_name="Описание в рамке (блок 2)", help_text=help_text)
+    description_1 = tinymce_models.HTMLField(verbose_name="Описание (блок 1)")
+    description_2 = tinymce_models.HTMLField(verbose_name="Описание в рамке (блок 2)")
 
 
     img1 = models.ImageField(upload_to="static/upload_img/", verbose_name="img1 (загружать подряд по две)", blank=True, null=True)

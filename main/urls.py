@@ -1,5 +1,9 @@
 from django.urls import path
-from .views import HomePageView, ArticleView, ArticleDetailView, ReviewsView, ContactView, ProjectView, ProjectDetailView, Work_ExampleDetailView, Work_Example_In_ProjectDetailView, DeliveryView, How_to_offerView
+from .views import HomePageView, ArticleView, ArticleDetailView,\
+    ReviewsView, ContactView, ProjectView, ProjectDetailView,\
+    Work_ExampleDetailView, Work_Example_In_ProjectDetailView,\
+    DeliveryView, How_to_offerView
+
 
 urlpatterns = [
     path("", HomePageView.as_view(), name="homepage"),
@@ -13,5 +17,4 @@ urlpatterns = [
     path("project/work_example/<slug:slug>/", Work_Example_In_ProjectDetailView.as_view(), name="project_example"),
     path("delivery/", DeliveryView.as_view(), name='delivery'),
     path("offer/", How_to_offerView.as_view(), name='offer'),
-
 ]
