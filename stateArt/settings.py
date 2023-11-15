@@ -62,8 +62,7 @@ ROOT_URLCONF = 'stateArt.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -164,3 +163,6 @@ RECAPTCHA_SCORE_THRESHOLD = 0.5
 
 #  тестовый параметр, удалить при получении полноценных ключей
 SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
+
+
+

@@ -2,6 +2,7 @@ from django.views.generic import ListView, DetailView, TemplateView
 from django.shortcuts import HttpResponseRedirect
 from django.views.generic.edit import FormMixin
 from django.contrib import messages
+
 from main.models import Article, News, Reviews, Project, Work_Example, Work_Example_In_Project
 from .forms import Form
 

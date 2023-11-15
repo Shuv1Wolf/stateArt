@@ -18,6 +18,9 @@
 
 {% block main %}
             <div class="content-section">
+                <div class="breadcrumbs main-text">
+            <a class="link-text" href="/">Главная</a> > <a class="link-text" href="/project">проекты</a> > {{ object.title_h1_1|safe }}
+        </div>
                 <div class="only-text-block">
                     <h1 class="h1-title with-margin">
                         {{ object.title_h1_1|safe }}
