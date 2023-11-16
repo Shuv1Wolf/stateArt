@@ -172,16 +172,15 @@ TINYMCE_DEFAULT_CONFIG = {
     "height": "320px",
     "width": "960px",
     'selector': 'textarea',
-    "menubar": 'file edit view tools table help',
+    "menubar": 'file edit view tools table insert help',
     "plugins": "advlist,autolink,lists,link,charmap,print,preview,anchor," 
     "searchreplace,visualblocks,code,fullscreen,insertdatetime,table,paste," 
     "code,help,wordcount",
     "toolbar": "undo redo | link | " 
     "h2 H3 bold italic | bullist | table | " 
     "removeformat | help ",
-    'table_class': 'my-table-style',
     'valid_elements': 'h2[class=h2-title with-margin],h3[class=with-margin],p[class=main-text with-margin],'
-                      'a[href|title|class=link-text],b,i,strong,em,ul[class=only-text-block-list with-margin],'
+                      'a[id|href|title|class=link-text],b,i,strong,em,ul[class=only-text-block-list with-margin],'
                       'li[class=main-text],span,sup,code,address,div[class=only-text-block],img,'
                       'table[style|border],tr,th,td[style],colgroup,col,caption,tbody,thead,tfoot',
 
