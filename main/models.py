@@ -177,7 +177,7 @@ class Work_Example(models.Model):
     description_1 = tinymce_models.HTMLField(verbose_name="Описание (блок 1)")
     description_2 = tinymce_models.HTMLField(verbose_name="Описание в рамке (блок 2) ")
 
-    img1 = models.ImageField(upload_to="static/upload_img/", verbose_name="img1", blank=True, null=True)
+    img1 = models.ImageField(upload_to="static/upload_img/", verbose_name="img1 (загружать подряд по две)", blank=True, null=True)
     img2 = models.ImageField(upload_to="static/upload_img/", verbose_name="img2", blank=True, null=True)
     img3 = models.ImageField(upload_to="static/upload_img/", verbose_name="img3", blank=True, null=True)
     img4 = models.ImageField(upload_to="static/upload_img/", verbose_name="img4", blank=True, null=True)

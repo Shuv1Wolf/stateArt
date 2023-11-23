@@ -40,7 +40,7 @@
                             {% endif %}
                         </div>
                         <a href="{{ i.img_article.url }}" class="fancybox text-with-image-image with-margin" data-fancybox-clickSlide="false">
-                                <img src="{{ i.img_article.url }}" alt="Изображение" >
+                                <img src="{{ i.img_article.url }}" alt="{{ i.alt_img_article }}" title="{{ i.title_img_article }}">
                         </a>
 
                     </div>
@@ -48,6 +48,80 @@
                         <p class="main-text with-margin">{{ i.description_3|safe }}</p>
                     {% endif %}
                 </div>
+                {% if i.img1.url != "" %}
+                <div class="two-photos-block">
+
+                    <a href="{{ i.img1.url }}" class="fancybox two-images-one" data-fancybox-clickSlide="false">
+                                <img src="{{ i.img1.url }}" alt="{{ i.alt_img1 }}" title="{{ i.title_img1 }}">
+                    </a>
+
+                    {% endif %}
+                    {% if i.img2.url != "" %}
+                    <a href="{{ i.img2.url }}" class="fancybox two-images-one" data-fancybox-clickSlide="false">
+                                <img src="{{ i.img2.url }}" alt="{{ i.alt_img2 }}" title="{{ i.title_img2 }}">
+                    </a>
+                </div>
+                {% endif %}
+                {% if i.img3.url != "" %}
+                <div class="two-photos-block">
+                    <a href="{{ i.img3.url }}" class="fancybox two-images-one" data-fancybox-clickSlide="false">
+                                <img src="{{ i.img3.url }}" alt="{{ i.alt_img3 }}" title="{{ i.title_img3 }}" >
+                    </a>
+                    {% endif %}
+                    {% if i.img4.url != "" %}
+                    <a href="{{ i.img4.url }}" class="fancybox two-images-one" data-fancybox-clickSlide="false">
+                                <img src="{{ i.img4.url }}" alt="{{ i.alt_img4 }}" title="{{ i.title_img4 }}" >
+                    </a>
+                </div>
+                {% endif %}
+                {% if i.img5.url != "" %}
+                <div class="two-photos-block">
+                    <a href="{{ i.img5.url }}" class="fancybox two-images-one" data-fancybox-clickSlide="false">
+                                <img src="{{ i.img5.url }}" alt="{{ i.alt_img5 }}" title="{{ i.title_img5 }}">
+                    </a>
+                    {% endif %}
+                    {% if i.img6.url != "" %}
+                    <a href="{{ i.img6.url }}" class="fancybox two-images-one" data-fancybox-clickSlide="false">
+                                <img src="{{ i.img6.url }}" alt="{{ i.alt_img6 }}" title="{{ i.title_img6 }}">
+                    </a>
+                </div>
+                {% endif %}
+                {% if i.img7.url != "" %}
+                <div class="two-photos-block">
+                    <a href="{{ i.img7.url }}" class="fancybox two-images-one" data-fancybox-clickSlide="false">
+                                <img src="{{ i.img7.url }}" alt="{{ i.alt_img7 }}" title="{{ i.title_img7 }}">
+                    </a>
+                    {% endif %}
+                    {% if i.img8.url != "" %}
+                    <a href="{{ i.img8.url }}" class="fancybox two-images-one" data-fancybox-clickSlide="false">
+                                <img src="{{ i.img8.url }}" alt="{{ i.alt_img8 }}" title="{{ i.title_img8 }}" >
+                    </a>
+                </div>
+                {% endif %}
+                {% if i.img9.url != "" %}
+                <div class="two-photos-block">
+                    <a href="{{ i.img9.url }}" class="fancybox two-images-one" data-fancybox-clickSlide="false">
+                                <img src="{{ i.img9.url }}" alt="{{ i.alt_img9 }}" title="{{ i.title_img9 }}">
+                    </a>
+                    {% endif %}
+                    {% if i.img10.url != "" %}
+                    <a href="{{ i.img10.url }}" class="fancybox two-images-one" data-fancybox-clickSlide="false">
+                                <img src="{{ i.img10.url }}" alt="{{ i.alt_img10 }}" title="{{ i.title_img10 }}">
+                    </a>
+                </div>
+                {% endif %}
+                {% if i.img11.url != "" %}
+                <div class="two-photos-block">
+                    <a href="{{ i.img11.url }}" class="fancybox two-images-one" data-fancybox-clickSlide="false">
+                                <img src="{{ i.img11.url }}" alt="{{ i.alt_img11 }}" title="{{ i.title_img11 }}">
+                    </a>
+                    {% endif %}
+                    {% if i.img12.url != "" %}
+                    <a href="{{ i.img12.url }}" class="fancybox two-images-one" data-fancybox-clickSlide="false">
+                                <img src="{{ i.img12.url }}" alt="{{ i.alt_img12 }}" title="{{ i.title_img12 }}">
+                    </a>
+                </div>
+                {% endif %}
                 <div class="callback-banner">
                     <div class="callback-banner-callback-part">
                         <p class="callback-banner-title">Получить бесплатную консультацию</p>
