@@ -24,6 +24,9 @@ class News(models.Model):
     news = tinymce_models.HTMLField(verbose_name="Текст новости")
     img = models.ImageField(upload_to="static/upload_img/", verbose_name="img в новости", blank=True, null=True)
 
+    title = models.CharField(max_length=250, blank=True, null=True)
+    alt = models.CharField(max_length=250, blank=True, null=True)
+
     def __str__(self):
         return self.news
 
@@ -47,6 +50,9 @@ class Article(models.Model):
     title_h1_2 = models.CharField(max_length=250, verbose_name="Второй заголовок (h2) на странице статьи для второго блока", blank=True, null=True)
     description_2 = tinymce_models.HTMLField(verbose_name="Описание статьи (блок 2 напротив img)", blank=True, null=True)
     description_3 = tinymce_models.HTMLField(verbose_name="Описание статьи (блок 3 под img) ", blank=True, null=True)
+
+    title_img = models.CharField(max_length=250, blank=True, null=True)
+    alt_img = models.CharField(max_length=250, blank=True, null=True)
 
     def __str__(self):
         return self.title_article
@@ -93,6 +99,8 @@ class Project(models.Model):
 
     title_h1_1 = models.CharField(max_length=250, verbose_name="Заголовок (h1) на странице статьи")
     img_article = models.ImageField(upload_to="static/upload_img/", verbose_name="img в статье")
+    alt_img_article = models.CharField(max_length=250, blank=True, null=True, verbose_name="SEO alt 'img в статье'")
+    title_img_article = models.CharField(max_length=250, blank=True, null=True, verbose_name="SEO title 'img в статье'")
     year = models.CharField(max_length=4, verbose_name='Год')
     name = models.CharField(max_length=250, verbose_name='Название', help_text=help_text)
     address = models.CharField(max_length=250, verbose_name='Адрес')
@@ -111,6 +119,42 @@ class Project(models.Model):
     img10 = models.ImageField(upload_to="static/upload_img/", verbose_name="img10", blank=True, null=True)
     img11 = models.ImageField(upload_to="static/upload_img/", verbose_name="img11", blank=True, null=True)
     img12 = models.ImageField(upload_to="static/upload_img/", verbose_name="img12", blank=True, null=True)
+
+    title_img1 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img1 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img2 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img2 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img3 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img3 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img4 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img4 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img5 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img5 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img6 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img6 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img7 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img7 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img8 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img8 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img9 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img9 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img10 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img10 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img11 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img11 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img12 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img12 = models.CharField(max_length=250, blank=True, null=True)
 
     def __str__(self):
         return self.title_h1_1
@@ -146,6 +190,42 @@ class Work_Example(models.Model):
     img11 = models.ImageField(upload_to="static/upload_img/", verbose_name="img11", blank=True, null=True)
     img12 = models.ImageField(upload_to="static/upload_img/", verbose_name="img12", blank=True, null=True)
 
+    title_img1 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img1 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img2 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img2 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img3 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img3 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img4 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img4 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img5 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img5 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img6 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img6 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img7 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img7 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img8 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img8 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img9 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img9 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img10 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img10 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img11 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img11 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img12 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img12 = models.CharField(max_length=250, blank=True, null=True)
+
     def __str__(self):
         return self.title_article
 
@@ -161,7 +241,7 @@ class Work_Example_In_Project(models.Model):
     description = models.CharField(max_length=255, verbose_name="description", blank=True, null=True)
 
     title_article = models.CharField(max_length=250, verbose_name="Заголовок на странице с проектами")
-    title_description = models.TextField(max_length=350, verbose_name="Краткое описание на странице с проектами", help_text=help_text)
+    title_description = tinymce_models.HTMLField(max_length=350, verbose_name="Краткое описание на странице с проектами")
 
     title_h1_1 = models.CharField(max_length=250, verbose_name="Заголовок (h1) на странице примера работы")
     description_1 = tinymce_models.HTMLField(verbose_name="Описание (блок 1)")
@@ -180,6 +260,42 @@ class Work_Example_In_Project(models.Model):
     img10 = models.ImageField(upload_to="static/upload_img/", verbose_name="img10", blank=True, null=True)
     img11 = models.ImageField(upload_to="static/upload_img/", verbose_name="img11", blank=True, null=True)
     img12 = models.ImageField(upload_to="static/upload_img/", verbose_name="img12", blank=True, null=True)
+
+    title_img1 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img1 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img2 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img2 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img3 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img3 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img4 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img4 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img5 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img5 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img6 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img6 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img7 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img7 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img8 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img8 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img9 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img9 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img10 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img10 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img11 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img11 = models.CharField(max_length=250, blank=True, null=True)
+
+    title_img12 = models.CharField(max_length=250, blank=True, null=True)
+    alt_img12 = models.CharField(max_length=250, blank=True, null=True)
 
     def __str__(self):
         return self.title_article

@@ -14,6 +14,10 @@
     <link rel="canonical" href={% block canonical %}{% endblock %}/>
     <meta name="description" content={% block description %}{% endblock %}>
     <script src="{% static 'tinymce/js/tinymce/tinymce.min.js' %}"></script>
+    <script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/watch.js"></script>
+    <meta name="yandex-verification" content="6657b2b9d0b0cd5a">
+    <meta name="yandex-verification" content="1e8910b0e37ab823">
+    <meta name="yandex-verification" content="6657b2b9d0b0cd5a">
     {% block css %}
     {% endblock %}
 </head>
@@ -81,7 +85,7 @@
                         Нажимая кнопку, я принимаю <a href="#" class="link-text">соглашение о конфиденциальности</a> и
                         соглашаюсь с обработкой персональных данных
                     </p>
-                    <button  class="submit-btn">Отправить</button>
+                    <button class="submit-btn" onclick="yaCounter12158188.reachGoal('ClickHeaderObrZvonok'); return true;">Отправить</button>
                     {% if messages %}
                         {% for message in messages %}
                             <script>alert('{{ message }}')</script>
@@ -134,7 +138,7 @@
                             производства и
                             монтажа.</a></li>
                     <li><a href="{% url 'benches_and_gazebos' %}" class="main-text strong sidebar-text">Скамейки и беседки</a></li>
-                    <li><a href="{% url 'non-standard_metal_structures' %} class="main-text strong sidebar-text">Нестандартные металлоконструкции</a></li>
+                    <li><a href="{% url 'non-standard_metal_structures' %}" class="main-text strong sidebar-text">Нестандартные металлоконструкции</a></li>
                 </nav>
                 </li>
 

@@ -33,9 +33,9 @@
                     <div class="catalog-links">
                         {% for i in work_example %}
                         <div class="catalog-link">
-                            <a href="{% url 'project_example' i.slug %}" class="link-text with-margin">{{ i.title_article }}</a>
+                            <a href="{% url 'project_example' i.slug %}" class="link-text with-margin">{{ i.title_article|safe }}</a>
                         </div>
-                        <p class="main-text with-margin">{{ i.title_description }}</p>
+                        {{ i.title_description|safe }}
                         {% endfor %}
                     </div>
                 </div>

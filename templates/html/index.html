@@ -18,7 +18,8 @@
                 <h1 class="h1-title align-center">Производство металлических конструкций</h1>
                 <div class="three-columns-block">
                     <div class="three-columns-block_column">
-                        <img src="{% static 'content/img/1.jpg' %}" alt="" class="default-image">
+                        <img src="{% static 'content/img/1.jpg' %}" alt="State Art: Проектирование и изготовление конструкций для интерьера" class="default-image"
+                             title="Производство Стэйт-Арт: Нержавеющая сталь в интерьере - все применения">
                         <p class="main-text red-text with-margin">
                             РАЗРАБОТКА и изготовление мебели и элементов интерьера:
                         </p>
@@ -30,7 +31,8 @@
                         <a href="#" class="link-text">- подстолья, опоры и столы</a>
                     </div>
                     <div class="three-columns-block_column">
-                        <img src="{% static 'content/img/2.jpg' %}" alt="" class="default-image">
+                        <img src="{% static 'content/img/2.jpg' %}" alt="State Art: Сдвижные навесы и ограждающие конструкции" class="default-image"
+                        title="Производство Стэйт-Арт: Сдвижные навесы и ограждающие конструкции из нержавеющей стали">
                         <p class="main-text red-text with-margin">
                             ПРОИЗВОДСТВО легких декоративных металлоконструкций:
                         </p>
@@ -43,7 +45,8 @@
                         <a href="#" class="link-text">- нержавеющая мебель для гаражей и хозблоков</a>
                     </div>
                     <div class="three-columns-block_column">
-                        <img src="{% static 'content/img/3.jpg' %}" alt="" class="default-image">
+                        <img src="{% static 'content/img/3.jpg' %}" alt="State Art: Проектирование и изготовление интерактивной мультимедиа среды" class="default-image"
+                        title="Производство Стэйт-Арт: Мебель, пилоны и конструкции со встроенной мультимедиа">
                         <p class="main-text red-text with-margin">
                             Digital оборудование: интерактивное, проекционное, голографическое
                         </p>
@@ -121,7 +124,7 @@
                     {% if i.img.url != "" %}
                         <div class="two-images">
                             <a href="{{ i.img.url }}" class="fancybox" data-fancybox-clickSlide="false">
-                                <img src="{{ i.img.url }}" alt="Изображение" class="two-images-one">
+                                <img src="{{ i.img.url }}" alt="{{ i.alt }}" title="{{ i.title }}" class="two-images-one">
                             </a>
 
                         </div>
