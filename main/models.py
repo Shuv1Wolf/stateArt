@@ -83,11 +83,11 @@ class Project(models.Model):
     canonical = models.CharField(max_length=255, verbose_name="canonical", blank=True, null=True)
     description = models.CharField(max_length=255, verbose_name="description", blank=True, null=True)
 
-    title_article = models.CharField(max_length=250, verbose_name="Заголовок на странице со статьями")
-    img_title = models.ImageField(upload_to="static/upload_img/", verbose_name="img на странице со статьями")
+    title_article = models.CharField(max_length=250, verbose_name="Заголовок на странице проектов")
+    img_title = models.ImageField(upload_to="static/upload_img/", verbose_name="img на странице проектов")
 
-    title_h1_1 = models.CharField(max_length=250, verbose_name="Заголовок (h1) на странице статьи")
-    img_article = models.ImageField(upload_to="static/upload_img/", verbose_name="img в статье")
+    title_h1_1 = models.CharField(max_length=250, verbose_name="Заголовок (h1) на странице проекта")
+    img_article = models.ImageField(upload_to="static/upload_img/", verbose_name="img в проекте")
     alt_img_article = models.CharField(max_length=250, blank=True, null=True, verbose_name="SEO alt 'img в статье'")
     title_img_article = models.CharField(max_length=250, blank=True, null=True, verbose_name="SEO title 'img в статье'")
     year = models.CharField(max_length=4, verbose_name='Год')
