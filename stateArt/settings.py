@@ -157,6 +157,8 @@ STATICFILES_DIRS = [BASE_DIR / 'static/']
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
+
+# RECAPTCHA
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 RECAPTCHA_USE_SSL = False
@@ -165,11 +167,12 @@ RECAPTCHA_SECRET_KEY = os.getenv("RECAPTCHA_SECRET_KEY")
 RECAPTCHA_DEFAULT_ACTION = 'generic'
 RECAPTCHA_SCORE_THRESHOLD = 0.5
 
-#  тестовый параметр, удалить при получении полноценных ключей
 SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 
 DATA_UPLOAD_MAX_MEMORY_SIZE = 5242880
 
+
+# TINYMCE
 TINYMCE_DEFAULT_CONFIG = {
     "theme": "silver",
     "height": "320px",
@@ -192,6 +195,14 @@ TINYMCE_DEFAULT_CONFIG = {
 
 }
 
+# SMTP
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = os.getenv("EMAIL_HOST")
+EMAIL_PORT = os.getenv("EMAIL_PORT")
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD")
+EMAIL_USE_SSL = True
 
 
 
