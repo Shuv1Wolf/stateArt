@@ -167,4 +167,13 @@ class Main_menu_Model(models.Model):
         verbose_name_plural = "Главное левое меню"
 
 
+class Image(models.Model):
+    image = models.ImageField(upload_to="static/upload_img/", verbose_name="img")
+
+    def __str__(self):
+        return self.image
+
+    class Meta:
+        verbose_name = "Загрузка фото"
+        verbose_name_plural = "Загрузка фото"
 
