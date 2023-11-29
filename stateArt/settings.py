@@ -188,9 +188,10 @@ TINYMCE_DEFAULT_CONFIG = {
     'file_picker_callback': 'your_image_picker_callback_function',
     'image_description': True,
     'image_title': True,
+    'image_advtab': True,
     'valid_elements': 'h2[class=h2-title with-margin],h3[class=with-margin],p[class=main-text with-margin],'
                       'a[id|href|title|class=link-text fancybox|data-fancybox-clickSlide=false],b,i,strong,em,ul[class=only-text-block-list with-margin],'
-                      'li[class=main-text],span,sup,code,address,div[class=two-images],img[title|alt|width|height|src],'
+                      'li[class=main-text],span,sup,code,address,div[class=two-images],img[title|alt|width|height|src|style],'
                       'table[style|border],tr,th[style|scope],td[style],colgroup,col,caption,tbody,thead,tfoot',
 
 }

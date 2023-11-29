@@ -3,25 +3,12 @@ from phonenumber_field.modelfields import PhoneNumberField
 from tinymce import models as tinymce_models
 # Create your models here.
 
-help_text = '''
-    Примеры тегов и классов: 
-    <p>&lt;a href="#" class="link-text"&gt;&lt;/a&gt;</p>
-    <p>&lt;p class="main-text with-margin"&gt;&lt;/p&gt;</p> 
-    <p>&lt;h2 class="h2-title with-margin"&gt;&lt;/h2&gt;</p>
-    <p>&lt;i&gt;&lt;/i&gt;</p>
-    <p>&lt;b&gt;&lt;/b&gt;</p>
-    <p></p><p></p>
-    <p>навигация c элементами списка:</p>
-    <p>&lt;nav class="only-text-block-list with-margin"&gt;</p>
-    <p>&lt;li class="main-text"&gt;&lt;/li&gt;</p>
-    <p>&lt;/nav&gt;</p>
-    <p></p><p></p>
-    <p>ссылка на форму обратной связи: </p>
-    <p>&lt;a class=" link-text callback-btn"&gt;Отправить заявку&lt;/a&gt;</p>
-    '''
+help_text = """
+    Вставка img: ../../../../static/upload_img/<название img> (в начале газрузить в админке)
+    """
 
 class News(models.Model):
-    news = tinymce_models.HTMLField(verbose_name="Текст новости")
+    news = tinymce_models.HTMLField(verbose_name="Текст новости", help_text=help_text)
 
     def __str__(self):
         return self.news
@@ -41,7 +28,7 @@ class Article(models.Model):
     img_title = models.ImageField(upload_to="static/upload_img/", verbose_name="img на странице со статьями")
 
     title_h1_1 = models.CharField(max_length=250, verbose_name="Заголовок (h1) на странице статьи")
-    description_1 = tinymce_models.HTMLField(verbose_name="Описание статьи (блок 1)")
+    description_1 = tinymce_models.HTMLField(verbose_name="Описание статьи (блок 1)", help_text=help_text)
 
     def __str__(self):
         return self.title_article
@@ -53,7 +40,7 @@ class Article(models.Model):
 
 class Reviews(models.Model):
     name = models.CharField(max_length=200, verbose_name="ФИ того, кто написал отзыв")
-    review = tinymce_models.HTMLField(verbose_name="Отзыв")
+    review = tinymce_models.HTMLField(verbose_name="Отзыв", help_text=help_text)
 
     def __str__(self):
         return self.name
@@ -96,7 +83,7 @@ class Project(models.Model):
     design = tinymce_models.HTMLField(max_length=250, verbose_name='Дизайн конструкций')
     additionally = tinymce_models.HTMLField(verbose_name='Дополнительная информация')
 
-    block = tinymce_models.HTMLField(verbose_name='Блок с фотографиями (+ текст)')
+    block = tinymce_models.HTMLField(verbose_name='Блок с фотографиями (+ текст)', help_text=help_text)
 
     def __str__(self):
         return self.title_h1_1
@@ -117,7 +104,7 @@ class Work_Example(models.Model):
     img_title = models.ImageField(upload_to="static/upload_img/", verbose_name="img на главной странице")
 
     title_h1_1 = models.CharField(max_length=250, verbose_name="Заголовок (h1) на странице примера работы")
-    description_1 = tinymce_models.HTMLField(verbose_name="Описание (блок 1)")
+    description_1 = tinymce_models.HTMLField(verbose_name="Описание (блок 1)", help_text=help_text)
 
     def __str__(self):
         return self.title_article
@@ -137,7 +124,7 @@ class Work_Example_In_Project(models.Model):
     title_description = models.CharField(max_length=255, verbose_name="Краткое описание на странице с проектами")
 
     title_h1_1 = models.CharField(max_length=250, verbose_name="Заголовок (h1) на странице примера работы")
-    description_1 = tinymce_models.HTMLField(verbose_name="Описание (блок 1)")
+    description_1 = tinymce_models.HTMLField(verbose_name="Описание (блок 1)", help_text=help_text)
 
     def __str__(self):
         return self.title_article
@@ -157,7 +144,7 @@ class Main_menu_Model(models.Model):
     name = models.CharField(max_length=100, verbose_name="Текст пункта в главном меню")
 
     title_h1_1 = models.CharField(max_length=250, verbose_name="Заголовок (h1)")
-    description_1 = tinymce_models.HTMLField(verbose_name="Описание (блок 1)")
+    description_1 = tinymce_models.HTMLField(verbose_name="Описание (блок 1)", help_text=help_text)
 
     def __str__(self):
         return self.title_h1_1
@@ -169,9 +156,6 @@ class Main_menu_Model(models.Model):
 
 class Image(models.Model):
     image = models.ImageField(upload_to="static/upload_img/", verbose_name="img")
-
-    def __str__(self):
-        return self.image
 
     class Meta:
         verbose_name = "Загрузка фото"

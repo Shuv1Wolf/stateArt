@@ -864,7 +864,7 @@ body {
     color: #fff;
 }
 
-.fancybox >*{
-    width: 100% !important;
-    height: auto !important;
-}
+/*.fancybox >*{*/
+/*    width: 100% !important;*/
+/*    height: auto !important;*/
+/*}*/
