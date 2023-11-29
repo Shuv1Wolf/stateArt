@@ -14,16 +14,13 @@
 {% endblock %}
 
 {% block main %}
-    <div class="content-section">
+            <div class="content-section">
         <div class="breadcrumbs main-text">
-            <a class="link-text" href="/">Главная</a> > <a class="link-text" href="/poleznye-stati">полезные статьи</a> > {{ object.title_h1_1|safe }}
+            <a class="link-text" href="/">Главная</a> > {{ object.title_h1_1|safe }}
         </div>
                 <div class="only-text-block">
                     <h1 class="h1-title with-margin">{{ object.title_h1_1|safe }}</h1>
-                    <p class="main-text with-margin strong">Другие Полезные статьи в разделе "Библиотека". <a
-                            class="link-text" href="{% url 'poleznye-stati' %}">Перейти</a>
-                    </p>
-                    {{ object.description_1|safe }}
+                    <p class="main-text with-margin">{{ object.description_1|safe }}</p>
                 </div>
                 <div class="callback-banner">
                     <div class="callback-banner-callback-part">

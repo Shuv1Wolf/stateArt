@@ -3,7 +3,7 @@ from django.shortcuts import HttpResponseRedirect
 from django.views.generic.edit import FormMixin
 from django.contrib import messages
 
-from main.models import Article, News, Reviews, Project, Work_Example, Work_Example_In_Project
+from main.models import Article, News, Reviews, Project, Work_Example, Work_Example_In_Project,Main_menu_Model
 from .forms import Form
 
 
@@ -173,6 +173,22 @@ class DeliveryView(TemplateView):
 class How_to_offerView(TemplateView, FormMixin):
     template_name = 'html/how_to_offer.html'
     form_class = Form
+
+    def post(self, request, *args, **kwargs):
+        form = Form(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Спасибо, Ваша заявка принята, мы перезвоним в ближайшее время')
+            return HttpResponseRedirect(request.path, {'form': form})
+        else:
+            return HttpResponseRedirect(request.path, {'form': form})
+
+
+class Main_menuDetailView(FormMixin, DetailView):
+    form_class = Form
+    model = Main_menu_Model
+    template_name = "html/main_menu.html"
+    context_object_name = 'object'
 
     def post(self, request, *args, **kwargs):
         form = Form(request.POST)

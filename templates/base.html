@@ -7,13 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{% static 'content/Favicon.png' %}" type="png">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <title>Студия StateArt - Нержавеющие металлоконструкции</title>
+    <title>{% block title %}{% endblock %}</title>
     <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900"
         rel="stylesheet">
     <link rel="stylesheet" href="{% static 'node_modules/fancybox/dist/css/jquery.fancybox.css' %}">
-    <link rel="canonical" href={% block canonical %}{% endblock %}/>
+    <link rel="canonical" href={% block canonical %}{% endblock %}>
     <meta name="description" content={% block description %}{% endblock %}>
-    <script src="{% static 'tinymce/js/tinymce/tinymce.min.js' %}"></script>
     <script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/watch.js"></script>
     <meta name="yandex-verification" content="6657b2b9d0b0cd5a">
     <meta name="yandex-verification" content="1e8910b0e37ab823">
@@ -26,7 +25,7 @@
     <div class="container">
         <header class="header">
             <div class="main-header-column">
-                <img src="{% static 'content/logosite.jpg' %}" alt="" class="logo">
+                <a href="/"><img src="{% static 'content/logosite.jpg' %}" alt="" class="logo"></a>
                 <p class="main-text align-center">Конструкции из нержавеющей стали
                     Работаем с 1996 года</p>
             </div>
@@ -95,8 +94,6 @@
             </div>
         </div>
 
-
-
         <nav class="header-navbar">
             <li class="navlink"><a href="{% url 'homepage' %}">Главная</a></li>
             <li class="navlink"><a href="{% url 'delivery' %}">Доставка и оплата</a></li>
@@ -120,94 +117,14 @@
             <div class="sidebar">
                 <nav class="sidebar-nav">
                     <h2 class="h2-title sidebar-title">Наши услуги</h2>
+                    {% for object in list_objects %}
                     <li class="dropdown sidebar-text">
-                        <a href="{% url 'production_and_metalworking' %}" class="main-text strong  dropdown-btn white">
-                            Производство и металлообработка
+                        <a href="{% url 'main_menu' object.slug %}" class="main-text strong  dropdown-btn white">
+                            {{ object.name }}
                         </a>
-                        <nav class="dropdown-content">
-                    <li><a href="{% url 'our_workshop' %}" class="main-text strong sidebar-text">Наш цех</a></li>
-                    <li><a href="{% url 'bar_counters_and_reception' %}" class="main-text strong sidebar-text">Барные стойки и ресепшен</a></li>
-                    <li><a href="{% url 'canopies_and_canopies' %}" class="main-text strong sidebar-text">Навесы и козырьки: металл, стекло</a></li>
-                    <li><a href="{% url 'furniture_and_interior_elements' %}" class="main-text strong sidebar-text">Мебель и элементы интерьера</a></li>
-                    <li><a href="{% url 'entrances_and_doors' %}" class="main-text strong sidebar-text">Входы и двери</a></li>
-                    <li><a href="{% url 'trusses_and_frames' %}" class="main-text strong sidebar-text">Фермы и каркасы</a></li>
-                    <li><a href="{% url 'columns' %}" class="main-text strong sidebar-text">Колонны</a></li>
-                    <li><a href="{% url 'perforated_sheet_metal_structures' %}" class="main-text strong sidebar-text">Конструкции из перфолиста</a></li>
-                    <li><a href="{% url 'decorative_fasteners' %}" class="main-text strong sidebar-text">Декоративный крепеж</a></li>
-                    <li><a href="{% url 'pool' %}" class="main-text strong sidebar-text">"Бассейн" частный проект. Описание
-                            производства и
-                            монтажа.</a></li>
-                    <li><a href="{% url 'benches_and_gazebos' %}" class="main-text strong sidebar-text">Скамейки и беседки</a></li>
-                    <li><a href="{% url 'non-standard_metal_structures' %}" class="main-text strong sidebar-text">Нестандартные металлоконструкции</a></li>
+                    </li>
+                    {% endfor %}
                 </nav>
-                </li>
-
-                <li class="dropdown sidebar-text">
-                    <a href="#" class="main-text strong  dropdown-btn">
-                        Лестницы и ограждения
-                    </a>
-                    <nav class="dropdown-content">
-                <li><a href="#" class="main-text strong sidebar-text">Изготовление металлического каркаса</a></li>
-                <li><a href="#" class="main-text strong sidebar-text">Лестницы из нержавейки</a></li>
-                <li><a href="#" class="main-text strong sidebar-text">Поручни из нержавеющей стали</a></li>
-                </nav>
-                </li>
-
-                <li class="dropdown sidebar-text">
-                    <a href="#" class="main-text strong  dropdown-btn">
-                        Почтовые ящики из металла
-                    </a>
-                    <nav class="dropdown-content">
-                <li><a href="#" class="main-text strong sidebar-text">Дизайн фасадов дверок почтовых ящиков</a></li>
-                <li><a href="#" class="main-text strong sidebar-text">Почтовые ящики в Интернет-магазине (перейти)</a>
-                </li>
-                </nav>
-                </li>
-
-                <li class="dropdown sidebar-text">
-                    <a href="#" class="main-text strong  dropdown-btn">
-                        Эксклюзивные цифровые интерактивные стенды
-                    </a>
-                    <nav class="dropdown-content">
-                <li><a href="#" class="main-text strong sidebar-text">Голографический куб-павильон Musion</a></li>
-                <li><a href="#" class="main-text strong sidebar-text">I-Collo круглый интерактивный стол</a></li>
-                <li><a href="#" class="main-text strong sidebar-text">I-Bar интерактивные барные стойки</a></li>
-                </nav>
-                </li>
-
-                <li class="sidebar-text"><a href="#" class="main-text strong">Торговое и выставочное оборудование из
-                        нержавеющей
-                        стали</a></li>
-
-                <li class="sidebar-text"><a href="#" class="main-text strong">Сдвижные навесы цокольных спусков</a></li>
-
-                <li class="sidebar-text"><a href="#" class="main-text strong">Декоративные витражные и зеркальные
-                        перегородки</a></li>
-
-                <li class="dropdown sidebar-text ">
-                    <a href="#" class="main-text strong dropdown-btn">
-                        Мебель в стиле ЛОФТ
-                    </a>
-                    <nav class="dropdown-content">
-                <li><a href="#" class="main-text strong sidebar-text">Столики и подстолья Лофт</a></li>
-                <li><a href="#" class="main-text strong sidebar-text">Стеновые обшивки и панели</a></li>
-                </nav>
-                </li>
-
-                <li class="sidebar-text"><a href="#" class="main-text strong">Нержавеющая корпусная и встраиваемая
-                        мебель
-                        для
-                        кухни</a></li>
-
-                <li class="sidebar-text"><a href="#" class="main-text strong">Интегрированные нержавеющие мойки</a></li>
-
-                <li class="sidebar-text"><a href="#" class="main-text strong">Напольные декоративные алюминиевые
-                        листы</a>
-                </li>
-
-                <li class="sidebar-text"><a href="#" class="main-text strong">Работа в State-Art</a></li>
-                </nav>
-
                 <div class="sidebar-reasons">
                     <h2 class="h2-title align-center">Почему нам доверяют</h2>
                     <nav class="reasons-list">
@@ -353,7 +270,7 @@
             });
 
             function validateInput(input) {
-                  var inputPattern = /^[а-яА-Я0-9-_():]+$/;
+                  var inputPattern = /^[а-яА-Я0-9-_(): ]+$/;
                   var inputValue = input.value;
 
                   if (!inputPattern.test(inputValue)) {
@@ -362,5 +279,4 @@
             }
     </script>
 </body>
-
 </html>

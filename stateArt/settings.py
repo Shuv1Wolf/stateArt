@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+
+import tinymce
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -43,7 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
-    'main_menu',
     'captcha',
     'widget_tweaks',
     'tinymce',
@@ -68,6 +69,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'main.context_processors.list_view_processor',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -173,19 +175,23 @@ TINYMCE_DEFAULT_CONFIG = {
     "height": "320px",
     "width": "960px",
     'selector': 'textarea',
-    "menubar": 'file edit view tools table insert help',
-    "plugins": "advlist,autolink,lists,link,charmap,print,preview,anchor," 
+    "menubar": 'file edit view tools table insert help image',
+    "plugins": "advlist,autolink,lists,link,charmap,print,preview,anchor" 
     "searchreplace,visualblocks,code,fullscreen,insertdatetime,table,paste," 
-    "code,help,wordcount",
-    "toolbar": "undo redo | link | " 
+    "code,help,wordcount,image",
+    "toolbar": "undo redo | link image | " 
     "h2 H3 bold italic | bullist | table | " 
-    "removeformat | help ",
+    "removeformat | help",
+    'file_picker_callback': 'your_image_picker_callback_function',
+    'image_description': True,
+    'image_title': True,
     'valid_elements': 'h2[class=h2-title with-margin],h3[class=with-margin],p[class=main-text with-margin],'
-                      'a[id|href|title|class=link-text],b,i,strong,em,ul[class=only-text-block-list with-margin],'
-                      'li[class=main-text],span,sup,code,address,div[class=only-text-block],img,'
-                      'table[style|border],tr,th,td[style],colgroup,col,caption,tbody,thead,tfoot',
+                      'a[id|href|title|class=link-text fancybox|data-fancybox-clickSlide=false],b,i,strong,em,ul[class=only-text-block-list with-margin],'
+                      'li[class=main-text],span,sup,code,address,div[class=two-images],img[title|alt|width|height|src],'
+                      'table[style|border],tr,th[style|scope],td[style],colgroup,col,caption,tbody,thead,tfoot',
 
 }
+
 
 
 
