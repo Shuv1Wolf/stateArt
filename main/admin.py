@@ -79,7 +79,7 @@ admin.site.register(Work_Example_In_Project, Work_Example_In_ProjectAdmin)
 class Main_menuAdmin(admin.ModelAdmin):
     fieldsets = (
         ('meta', {
-            'fields': ('slug', 'title', 'canonical', 'description'),
+            'fields': ('slug', 'title', 'canonical', 'description', 'hide'),
         }),
         ('Текст пункта', {
             'fields': ('name',),

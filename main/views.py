@@ -91,9 +91,9 @@ class HomePageView(FormMixin, ListView):
     def post(self, request, *args, **kwargs):
         form = Form(request.POST)
         if form.is_valid():
-            form.save()
             send_email(form.cleaned_data['phone_number'], form.cleaned_data['time'],
                        form.cleaned_data['name'], form.cleaned_data['url'])
+            form.save()
             messages.success(request, 'Спасибо, Ваша заявка принята, мы перезвоним в ближайшее время')
             return HttpResponseRedirect(request.path, {'form': form})
         else:
@@ -108,6 +108,8 @@ class ArticleView(FormMixin, ListView):
     def post(self, request, *args, **kwargs):
         form = Form(request.POST)
         if form.is_valid():
+            send_email(form.cleaned_data['phone_number'], form.cleaned_data['time'],
+                       form.cleaned_data['name'], form.cleaned_data['url'])
             form.save()
             messages.success(request, 'Спасибо, Ваша заявка принята, мы перезвоним в ближайшее время')
             return HttpResponseRedirect(request.path, {'form': form})
@@ -124,6 +126,8 @@ class ArticleDetailView(FormMixin, DetailView):
     def post(self, request, *args, **kwargs):
         form = Form(request.POST)
         if form.is_valid():
+            send_email(form.cleaned_data['phone_number'], form.cleaned_data['time'],
+                       form.cleaned_data['name'], form.cleaned_data['url'])
             form.save()
             messages.success(request, 'Спасибо, Ваша заявка принята, мы перезвоним в ближайшее время')
             return HttpResponseRedirect(request.path, {'form': form})
@@ -139,6 +143,8 @@ class ReviewsView(FormMixin, ListView):
     def post(self, request, *args, **kwargs):
         form = Form(request.POST)
         if form.is_valid():
+            send_email(form.cleaned_data['phone_number'], form.cleaned_data['time'],
+                       form.cleaned_data['name'], form.cleaned_data['url'])
             form.save()
             messages.success(request, 'Спасибо, Ваша заявка принята, мы перезвоним в ближайшее время')
             return HttpResponseRedirect(request.path, {'form': form})
@@ -153,6 +159,8 @@ class ContactView(FormMixin, TemplateView):
     def post(self, request, *args, **kwargs):
         form = Form(request.POST)
         if form.is_valid():
+            send_email(form.cleaned_data['phone_number'], form.cleaned_data['time'],
+                       form.cleaned_data['name'], form.cleaned_data['url'])
             form.save()
             messages.success(request, 'Спасибо, Ваша заявка принята, мы перезвоним в ближайшее время')
             return HttpResponseRedirect(request.path, {'form': form})
@@ -173,6 +181,8 @@ class ProjectView(FormMixin, ListView):
     def post(self, request, *args, **kwargs):
         form = Form(request.POST)
         if form.is_valid():
+            send_email(form.cleaned_data['phone_number'], form.cleaned_data['time'],
+                       form.cleaned_data['name'], form.cleaned_data['url'])
             form.save()
             messages.success(request, 'Спасибо, Ваша заявка принята, мы перезвоним в ближайшее время')
             return HttpResponseRedirect(request.path, {'form': form})
@@ -189,6 +199,8 @@ class ProjectDetailView(FormMixin, DetailView):
     def post(self, request, *args, **kwargs):
         form = Form(request.POST)
         if form.is_valid():
+            send_email(form.cleaned_data['phone_number'], form.cleaned_data['time'],
+                       form.cleaned_data['name'], form.cleaned_data['url'])
             form.save()
             messages.success(request, 'Спасибо, Ваша заявка принята, мы перезвоним в ближайшее время')
             return HttpResponseRedirect(request.path, {'form': form})
@@ -205,6 +217,8 @@ class Work_ExampleDetailView(FormMixin, DetailView):
     def post(self, request, *args, **kwargs):
         form = Form(request.POST)
         if form.is_valid():
+            send_email(form.cleaned_data['phone_number'], form.cleaned_data['time'],
+                       form.cleaned_data['name'], form.cleaned_data['url'])
             form.save()
             messages.success(request, 'Спасибо, Ваша заявка принята, мы перезвоним в ближайшее время')
             return HttpResponseRedirect(request.path, {'form': form})
@@ -221,6 +235,8 @@ class Work_Example_In_ProjectDetailView(FormMixin, DetailView):
     def post(self, request, *args, **kwargs):
         form = Form(request.POST)
         if form.is_valid():
+            send_email(form.cleaned_data['phone_number'], form.cleaned_data['time'],
+                       form.cleaned_data['name'], form.cleaned_data['url'])
             form.save()
             messages.success(request, 'Спасибо, Ваша заявка принята, мы перезвоним в ближайшее время')
             return HttpResponseRedirect(request.path, {'form': form})
@@ -234,6 +250,8 @@ class DeliveryView(TemplateView):
     def post(self, request, *args, **kwargs):
         form = Form(request.POST)
         if form.is_valid():
+            send_email(form.cleaned_data['phone_number'], form.cleaned_data['time'],
+                       form.cleaned_data['name'], form.cleaned_data['url'])
             form.save()
             messages.success(request, 'Спасибо, Ваша заявка принята, мы перезвоним в ближайшее время')
             return HttpResponseRedirect(request.path, {'form': form})
@@ -248,6 +266,8 @@ class How_to_offerView(TemplateView, FormMixin):
     def post(self, request, *args, **kwargs):
         form = Form(request.POST)
         if form.is_valid():
+            send_email(form.cleaned_data['phone_number'], form.cleaned_data['time'],
+                       form.cleaned_data['name'], form.cleaned_data['url'])
             form.save()
             messages.success(request, 'Спасибо, Ваша заявка принята, мы перезвоним в ближайшее время')
             return HttpResponseRedirect(request.path, {'form': form})
@@ -264,6 +284,8 @@ class Main_menuDetailView(FormMixin, DetailView):
     def post(self, request, *args, **kwargs):
         form = Form(request.POST)
         if form.is_valid():
+            send_email(form.cleaned_data['phone_number'], form.cleaned_data['time'],
+                       form.cleaned_data['name'], form.cleaned_data['url'])
             form.save()
             messages.success(request, 'Спасибо, Ваша заявка принята, мы перезвоним в ближайшее время')
             return HttpResponseRedirect(request.path, {'form': form})

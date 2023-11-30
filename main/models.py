@@ -140,6 +140,7 @@ class Main_menu_Model(models.Model):
     title = models.CharField(max_length=200, verbose_name="title")
     canonical = models.CharField(max_length=255, verbose_name="canonical", blank=True, null=True)
     description = models.CharField(max_length=255, verbose_name="description", blank=True, null=True)
+    hide = models.BooleanField(default=False, verbose_name='Скрыть страницу в главном левом меню')
 
     name = models.CharField(max_length=100, verbose_name="Текст пункта в главном меню")
 

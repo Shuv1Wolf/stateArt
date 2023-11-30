@@ -118,11 +118,13 @@
                 <nav class="sidebar-nav">
                     <h2 class="h2-title sidebar-title">Наши услуги</h2>
                     {% for object in list_objects %}
+                    {% if object.hide == False %}
                     <li class="dropdown sidebar-text">
                         <a href="{% url 'main_menu' object.slug %}" class="main-text strong  dropdown-btn white">
                             {{ object.name }}
                         </a>
                     </li>
+                    {% endif %}
                     {% endfor %}
                 </nav>
                 <div class="sidebar-reasons">
