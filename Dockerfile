@@ -14,4 +14,5 @@ ENV DJANGO_SUPERUSER_EMAIL=admin@example.com
 
 RUN pip install --no-cache-dir -r requirements.txt
 
+RUN python manage.py collectstatic --noinput
 COPY . .
