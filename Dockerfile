@@ -1,4 +1,4 @@
-FROM python:3.10-alpine3.17
+FROM python:3.10
 
 # Отключает сохранение кеша питоном
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -7,10 +7,13 @@ ENV PYTHONUNBUFFERED 1
 
 WORKDIR /app
 COPY requirements.txt .
+
+ENV DJANGO_SUPERUSER_USERNAME=admin
+ENV DJANGO_SUPERUSER_PASSWORD=admin
+ENV DJANGO_SUPERUSER_EMAIL=admin@example.com
+
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
 RUN python ./manage.py collectstatic --noinput
-
-CMD gunicorn stateArt.wsgi:application --bind 0.0.0.0:8000

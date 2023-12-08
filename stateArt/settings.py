@@ -31,7 +31,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 
@@ -178,13 +178,10 @@ TINYMCE_DEFAULT_CONFIG = {
     "width": "960px",
     'selector': 'textarea',
     "menubar": 'file edit view tools table insert help image',
-    "plugins": "advlist,autolink,lists,link,charmap,print,preview,anchor" 
-    "searchreplace,visualblocks,code,fullscreen,insertdatetime,table,paste," 
-    "code,help,wordcount,image",
+    "plugins": "advlist,autolink,lists,link,charmap,print,preview,anchor,searchreplace,visualblocks,code,fullscreen,insertdatetime,table,paste,code,help,wordcount,image",
     "toolbar": "undo redo | link image | " 
     "h2 H3 bold italic | bullist | table | " 
     "removeformat | help",
-    'file_picker_callback': 'your_image_picker_callback_function',
     'image_description': True,
     'image_title': True,
     'image_advtab': True,
