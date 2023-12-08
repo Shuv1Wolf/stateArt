@@ -291,3 +291,8 @@ class Main_menuDetailView(FormMixin, DetailView):
             return HttpResponseRedirect(request.path, {'form': form})
         else:
             return HttpResponseRedirect(request.path, {'form': form})
+
+
+class Privacy_policyView(FormMixin, TemplateView):
+    form_class = Form
+    template_name = "html/privacy_policy.html"
