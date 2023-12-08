@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'captcha',
     'widget_tweaks',
     'tinymce',
+    'whitenoise',
 ]
 
 MIDDLEWARE = [
@@ -58,6 +59,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'stateArt.urls'
@@ -95,20 +97,14 @@ if DEBUG:
 else:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.getenv("POSTGRES_DB"),
+            'USER': os.getenv("POSTGRES_USER"),
+            'PASSWORD': os.getenv("POSTGRES_PASSWORD"),
+            'HOST': os.getenv("POSTGRES_HOST"),
+            'PORT': os.getenv("POSTGRES_PORT")
         }
     }
-    # DATABASES = {
-    #     'default': {
-    #         'ENGINE': 'django.db.backends.postgresql',
-    #         'NAME': os.getenv("POSTGRES_DB"),
-    #         'USER': os.getenv("POSTGRES_USER"),
-    #         'PASSWORD': os.getenv("POSTGRES_PASSWORD"),
-    #         'HOST': os.getenv("POSTGRES_HOST"),
-    #         'PORT': os.getenv("POSTGRES_PORT")
-    #     }
-    # }
 
 
 # Password validation
@@ -145,14 +141,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-# STATIC_URL = 'static/'
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, "static"),
-# )
-
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
 STATICFILES_DIRS = [BASE_DIR / 'static/']
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

@@ -4,7 +4,7 @@ from tinymce import models as tinymce_models
 # Create your models here.
 
 help_text = """
-    Вставка img: ../../../../static/upload_img/<название img> (в начале газрузить в админке)
+    Вставка img: ../../../../media/<название img> (в начале газрузить в админке)
     """
 
 class News(models.Model):
@@ -25,7 +25,7 @@ class Article(models.Model):
     description = models.CharField(max_length=255, verbose_name="description", blank=True, null=True)
 
     title_article = models.CharField(max_length=250, verbose_name="Заголовок на странице со статьями")
-    img_title = models.ImageField(upload_to="static/upload_img/", verbose_name="img на странице со статьями")
+    img_title = models.ImageField(verbose_name="img на странице со статьями")
 
     title_h1_1 = models.CharField(max_length=250, verbose_name="Заголовок (h1) на странице статьи")
     description_1 = tinymce_models.HTMLField(verbose_name="Описание статьи (блок 1)", help_text=help_text)
@@ -71,10 +71,10 @@ class Project(models.Model):
     description = models.CharField(max_length=255, verbose_name="description", blank=True, null=True)
 
     title_article = models.CharField(max_length=250, verbose_name="Заголовок на странице проектов")
-    img_title = models.ImageField(upload_to="static/upload_img/", verbose_name="img на странице проектов")
+    img_title = models.ImageField(verbose_name="img на странице проектов")
 
     title_h1_1 = models.CharField(max_length=250, verbose_name="Заголовок (h1) на странице проекта")
-    img_article = models.ImageField(upload_to="static/upload_img/", verbose_name="img в проекте")
+    img_article = models.ImageField(verbose_name="img в проекте")
     alt_img_article = models.CharField(max_length=250, blank=True, null=True, verbose_name="SEO alt 'img в статье'")
     title_img_article = models.CharField(max_length=250, blank=True, null=True, verbose_name="SEO title 'img в статье'")
     year = models.CharField(max_length=4, verbose_name='Год')
@@ -101,7 +101,7 @@ class Work_Example(models.Model):
     description = models.CharField(max_length=255, verbose_name="description", blank=True, null=True)
 
     title_article = models.CharField(max_length=250, verbose_name="Заголовок на главной странице")
-    img_title = models.ImageField(upload_to="static/upload_img/", verbose_name="img на главной странице")
+    img_title = models.ImageField(verbose_name="img на главной странице")
 
     title_h1_1 = models.CharField(max_length=250, verbose_name="Заголовок (h1) на странице примера работы")
     description_1 = tinymce_models.HTMLField(verbose_name="Описание (блок 1)", help_text=help_text)
@@ -156,7 +156,7 @@ class Main_menu_Model(models.Model):
 
 
 class Image(models.Model):
-    image = models.ImageField(upload_to="static/upload_img/", verbose_name="img")
+    image = models.ImageField(verbose_name="img")
 
     def __str__(self):
         return self.image.url
