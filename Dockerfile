@@ -16,5 +16,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 
 COPY . .
-COPY ./media app/media
 RUN python ./manage.py collectstatic --noinput

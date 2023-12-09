@@ -38,5 +38,5 @@ services:
       - django
 volumes:
   static:
-  media:
+#  media:
   pgdata:
