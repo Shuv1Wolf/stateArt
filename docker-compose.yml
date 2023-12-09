@@ -31,12 +31,12 @@ services:
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
       - static:/static
-      - media:/app/media
+      - ./media:/app/media
     ports:
       - "80:80"
     depends_on:
       - django
 volumes:
   static:
-#  media:
+  media:
   pgdata:
