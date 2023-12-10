@@ -165,3 +165,7 @@ class Image(models.Model):
         verbose_name = "Загрузка фото"
         verbose_name_plural = "Загрузка фото"
 
+
+class Test(models.Model):
+    text = models.CharField(max_length=2)
+
