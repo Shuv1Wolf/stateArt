@@ -4,7 +4,7 @@ services:
     container_name: django
     build: .
     command: >
-      sh -c "gunicorn stateArt.wsgi:application --bind 0.0.0.0:8000"
+      sh -c "python manage.py migrate --noinput && gunicorn stateArt.wsgi:application --bind 0.0.0.0:8000"
 #      "python manage.py makemigrations && python manage.py migrate --noinput && python manage.py createsuperuser --noinput"
     volumes:
       - static:/app/static
