@@ -507,11 +507,16 @@ body {
     margin-left: 50px;
 }
 
+/*.two-images {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    margin-bottom: 40px;*/
+/*    margin-top: 40px;*/
+/*}*/
+
 .two-images {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
-    margin-top: 40px;
+    float: left;
+    margin: 0 10px 10px 0;
 }
 
 .two-images-one {
