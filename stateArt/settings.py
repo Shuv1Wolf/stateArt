@@ -193,7 +193,7 @@ TINYMCE_DEFAULT_CONFIG = {
     'image_advtab': True,
     'valid_elements': 'h2[class=h2-title with-margin],h3[class=with-margin],p[class=main-text with-margin],'
                       'a[id|href|title|class=link-text fancybox|data-fancybox-clickSlide=false],b,i,strong,em,ul[class=only-text-block-list with-margin],'
-                      'li[class=main-text],span,sup,code,address,div[style],img[title|alt|width|height|src|style],'
+                      'li[class=main-text],span,sup,code,address,div[style|class=two-images],img[title|alt|width|height|src|style],'
                       'table[style|border],tr,th[style|scope],td[style],colgroup,col,caption,tbody,thead,tfoot',
 
 }
