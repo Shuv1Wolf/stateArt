@@ -9,22 +9,23 @@ services:
     volumes:
       - static:/app/static
       - ./media:/app/media
+      - db:/app/db
     ports:
       - "8000:8000"
-    depends_on:
-      - postgresql
+#    depends_on:
+#      - postgresql
 
-  postgresql:
-    image: postgres:15-alpine
-    container_name: postgresql
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=postgres
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
+#  postgresql:
+#    image: postgres:15-alpine
+#    container_name: postgresql
+#    environment:
+#      - POSTGRES_USER=postgres
+#      - POSTGRES_PASSWORD=postgres
+#      - POSTGRES_DB=postgres
+#    volumes:
+#      - pgdata:/var/lib/postgresql/data
+#    ports:
+#      - "5432:5432"
 
   nginx:
     image: nginx
@@ -39,4 +40,5 @@ services:
 volumes:
   static:
   media:
-  pgdata:
+  db:
+#  pgdata:
